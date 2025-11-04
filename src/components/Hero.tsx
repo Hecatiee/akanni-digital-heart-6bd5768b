@@ -53,12 +53,6 @@ const Hero = () => {
                 Our Story
               </Button>
             </div>
-
-            {/* Contact info */}
-            <div className="pt-4 space-y-2 text-sm text-muted-foreground">
-              <p>📧 team.akanni@gmail.com</p>
-              <p>📱 +91 90041 38118</p>
-            </div>
           </div>
 
           {/* Hero illustration */}

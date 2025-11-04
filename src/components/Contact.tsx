@@ -76,7 +76,7 @@ const Contact = () => {
       
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Let's <span className="text-primary">Connect</span>
             </h2>
@@ -88,7 +88,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Contact info */}
             <div className="space-y-6">
-              <div className="bg-card rounded-3xl p-8 border-2 border-primary/20 shadow-lg">
+              <div className="bg-card rounded-3xl p-8 border-2 border-primary/20 shadow-lg hover:scale-105 transition-transform duration-300 float-animation">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
                     <Mail className="w-6 h-6 text-primary" />
@@ -105,7 +105,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-card rounded-3xl p-8 border-2 border-secondary/20 shadow-lg">
+              <div className="bg-card rounded-3xl p-8 border-2 border-secondary/20 shadow-lg hover:scale-105 transition-transform duration-300 float-animation" style={{ animationDelay: '0.5s' }}>
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center">
                     <Phone className="w-6 h-6 text-secondary" />
@@ -122,7 +122,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 border-2 border-accent/30">
+              <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 border-2 border-accent/30 hover:scale-105 transition-transform duration-300 float-animation" style={{ animationDelay: '1s' }}>
                 <p className="text-lg leading-relaxed">
                   <strong className="text-accent">New to Àkanní?</strong> We'd love to hear about your project. 
                   Whether it's a brand refresh, a new website, or a social impact initiative — 
@@ -132,7 +132,7 @@ const Contact = () => {
             </div>
 
             {/* Contact form */}
-            <form onSubmit={handleSubmit} className="bg-card rounded-3xl p-8 border-2 border-cta/20 shadow-lg">
+            <form onSubmit={handleSubmit} className="bg-card rounded-3xl p-8 border-2 border-cta/20 shadow-lg hover:scale-105 transition-transform duration-300 animate-fade-in">
               <div className="space-y-4">
                 <div>
                   <Input
