@@ -18,10 +18,9 @@ const About = () => {
                 This phase is practical, not performative.
               </p>
               <p>
-                We will help underserved communities (with a special focus on the transgender community in India) 
-                build and own their digital presence — brand representation, social media, web profiles and 
-                e-commerce — without charging them. We want to hand them a stage so they can be visible, 
-                respected, and self-sufficient in the digital world.
+                We will help underserved communities build and own their digital presence — brand representation, 
+                social media, web profiles and e-commerce — without charging them. We want to hand them a stage 
+                so they can be visible, respected, and self-sufficient in the digital world.
               </p>
             </div>
 
