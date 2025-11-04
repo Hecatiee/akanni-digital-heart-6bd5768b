@@ -1,14 +1,31 @@
 import { Quote } from "lucide-react";
 import boiTestimonial from "@/assets/boi-testimonial.png";
+import comicBeeTestimonial from "@/assets/comic-bee-testimonial.png";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Testimonials = () => {
+  const testimonials = [
+    {
+      image: boiTestimonial,
+      alt: "Federation of Bank of India Pensioners & Retirees Associations Testimonial",
+      title: "Federation of Bank of India Pensioners & Retirees Associations",
+      description: "Official website launched at national Triennial Delegate Session (700+ members)"
+    },
+    {
+      image: comicBeeTestimonial,
+      alt: "Comic Bee - Comic Book Designing Testimonial",
+      title: "Comic Bee",
+      description: "Comic Book (Designing)"
+    }
+  ];
+
   return (
     <section className="relative py-20 px-6 overflow-hidden bg-gradient-to-b from-background to-secondary/20">
       {/* Background blobs */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl blob-animation" />
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl blob-animation-delayed" />
       
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-in">
           <Quote className="w-12 h-12 mx-auto mb-4 text-primary float-animation" />
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
@@ -19,26 +36,33 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-1 gap-8">
-          {/* BOI Testimonial */}
-          <div className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10">
-            <div className="flex flex-col items-center">
-              <img 
-                src={boiTestimonial} 
-                alt="Federation of Bank of India Pensioners & Retirees Associations Testimonial" 
-                className="w-full max-w-3xl rounded-2xl shadow-md mb-6"
-              />
-              <div className="text-center">
-                <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
-                  Federation of Bank of India Pensioners & Retirees Associations
-                </h3>
-                <p className="text-muted-foreground italic">
-                  Official website launched at national Triennial Delegate Session (700+ members)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Carousel className="w-full max-w-4xl mx-auto">
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index}>
+                <div className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10">
+                  <div className="flex flex-col items-center">
+                    <img 
+                      src={testimonial.image} 
+                      alt={testimonial.alt}
+                      className="w-full max-w-2xl rounded-2xl shadow-md mb-6"
+                    />
+                    <div className="text-center">
+                      <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
+                        {testimonial.title}
+                      </h3>
+                      <p className="text-muted-foreground italic">
+                        {testimonial.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
 
         {/* Decorative elements */}
         <div className="absolute -top-4 left-1/4 w-8 h-8 text-accent/30 float-animation">
@@ -53,6 +77,6 @@ const Testimonials = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Testimonials;
