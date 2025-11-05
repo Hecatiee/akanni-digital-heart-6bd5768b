@@ -1,6 +1,8 @@
 import { Quote } from "lucide-react";
 import boiTestimonial from "@/assets/boi-testimonial.png";
 import comicBeeTestimonial from "@/assets/comic-bee-testimonial.png";
+import nupurTestimonial from "@/assets/nupur-testimonial.png";
+import manishaTestimonial from "@/assets/manisha-testimonial.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Testimonials = () => {
@@ -16,6 +18,18 @@ const Testimonials = () => {
       alt: "Comic Bee - Comic Book Designing Testimonial",
       title: "Comic Bee",
       description: "Comic Book (Designing)"
+    },
+    {
+      image: nupurTestimonial,
+      alt: "Nupur Risbood - Social Media Marketing Testimonial",
+      title: "Nupur Risbood",
+      description: "Social Media Marketing"
+    },
+    {
+      image: manishaTestimonial,
+      alt: "Mrs. Manisha Athavle - YouTube Management Testimonial",
+      title: "Mrs. Manisha Athavle",
+      description: "YouTube Management"
     }
   ];
 
