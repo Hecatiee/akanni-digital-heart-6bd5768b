@@ -15,8 +15,8 @@ const Testimonials = () => {
     },
     {
       image: comicBeeTestimonial,
-      alt: "Santosh sir - Comic Book Designing Testimonial",
-      title: "Santosh sir",
+      alt: "Santosh Pisharody - Comic Book Designing Testimonial",
+      title: "Santosh Pisharody",
       description: "Comic Book (Designing)"
     },
     {
