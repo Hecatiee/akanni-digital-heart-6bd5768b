@@ -28,21 +28,21 @@ const About = () => {
 
             <div className="space-y-8 text-lg leading-relaxed">
               <div className="bg-gradient-to-r from-cta/20 to-primary/20 rounded-3xl p-8 shadow-lg border-2 border-cta/30 hover:scale-105 transition-transform duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-cta">Àkanní 2.0 — Digital Inclusion Movement</h3>
+                <h3 className="text-2xl font-bold mb-4 text-cta">Àkanní 2.0: Digital Inclusion Movement</h3>
                 <p className="mb-4">
-                  Now we&apos;re launching <strong>Àkanní 2.0</strong> — a focused movement for digital inclusion. 
+                  Now we&apos;re launching <strong>Àkanní 2.0</strong>, a focused movement for digital inclusion. 
                   This phase is practical, not performative.
                 </p>
                 <p>
-                  We will help underserved communities build and own their digital presence — brand representation, 
-                  social media, web profiles and e-commerce — without charging them. We want to hand them a stage 
+                  We will help underserved communities build and own their digital presence: brand representation, 
+                  social media, web profiles and e-commerce, without charging them. We want to hand them a stage 
                   so they can be visible, respected, and self-sufficient in the digital world.
                 </p>
               </div>
 
               <div className="text-center md:text-left py-8 animate-fade-in clear-right md:clear-none">
                 <p className="text-2xl font-bold text-foreground hover:scale-105 transition-transform duration-300">
-                  Àkanní is more than a service studio —<br />
+                  Àkanní is more than a service studio.<br />
                   <span className="text-primary">we&apos;re a growth partner</span> that blends 
                   <span className="text-secondary"> creativity</span>, 
                   <span className="text-accent"> technology</span>, and 

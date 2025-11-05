@@ -31,8 +31,8 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
-              We're a one-stop digital studio that brings design, tech, and marketing together. 
-              From AI-driven design to web apps and social impact projects — we turn ideas into reality.
+              We&apos;re a one-stop digital studio that brings design, tech, and marketing together. 
+              From AI-driven design to web apps and social impact projects, we turn ideas into reality.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
