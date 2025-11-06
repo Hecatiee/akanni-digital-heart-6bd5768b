@@ -57,27 +57,45 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-          {services.map((service, index) => {
-            const Icon = service.icon;
-            const isBottomRow = index >= 3;
-            return (
-              <Card 
-                key={index}
-                className={`border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in ${
-                  isBottomRow ? 'md:translate-x-[50%]' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader className="pb-3">
-                  <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
-                    <Icon className={`w-6 h-6 ${service.color}`} />
-                  </div>
-                  <CardTitle className="text-base font-bold leading-tight">{service.title}</CardTitle>
-                </CardHeader>
-              </Card>
-            );
-          })}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            {services.slice(0, 3).map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Card 
+                  key={index}
+                  className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <CardHeader className="pb-3">
+                    <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
+                      <Icon className={`w-6 h-6 ${service.color}`} />
+                    </div>
+                    <CardTitle className="text-base font-bold leading-tight">{service.title}</CardTitle>
+                  </CardHeader>
+                </Card>
+              );
+            })}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:px-[16.66%]">
+            {services.slice(3).map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Card 
+                  key={index + 3}
+                  className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in"
+                  style={{ animationDelay: `${(index + 3) * 0.1}s` }}
+                >
+                  <CardHeader className="pb-3">
+                    <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
+                      <Icon className={`w-6 h-6 ${service.color}`} />
+                    </div>
+                    <CardTitle className="text-base font-bold leading-tight">{service.title}</CardTitle>
+                  </CardHeader>
+                </Card>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
