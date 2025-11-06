@@ -13,7 +13,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "About", id: "about" },
-    { name: "Projects", id: "projects" },
+    { name: "Our Services", id: "services" },
     { name: "Testimonials", id: "testimonials" },
   ];
 
