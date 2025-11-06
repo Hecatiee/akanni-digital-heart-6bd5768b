@@ -53,10 +53,14 @@ const Testimonials = () => {
 
         <Carousel 
           className="w-full max-w-3xl mx-auto"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
           plugins={[
             Autoplay({
               delay: 3000,
-              stopOnInteraction: true,
+              stopOnInteraction: false,
             }),
           ]}
         >
