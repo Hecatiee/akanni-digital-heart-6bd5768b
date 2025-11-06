@@ -4,14 +4,15 @@ import comicBeeTestimonial from "@/assets/comic-bee-testimonial.png";
 import nupurTestimonial from "@/assets/nupur-testimonial.png";
 import manishaTestimonial from "@/assets/manisha-testimonial.png";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Testimonials = () => {
   const testimonials = [
     {
       image: boiTestimonial,
-      alt: "Federation of Bank of India Pensioners & Retirees Associations Testimonial",
-      title: "Federation of Bank of India Pensioners & Retirees Associations",
-      description: "Official website launched at national Triennial Delegate Session (700+ members)"
+      alt: "Mukund Satpute - Federation of Bank of India Pensioners and Retirees Associations Testimonial",
+      title: "Mukund Satpute",
+      description: "Federation of Bank of India Pensioners and Retirees Associations"
     },
     {
       image: comicBeeTestimonial,
@@ -43,29 +44,37 @@ const Testimonials = () => {
         <div className="text-center mb-12 animate-fade-in">
           <Quote className="w-12 h-12 mx-auto mb-4 text-primary float-animation" />
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
-            What Our Clients Say
+            Our Clients
           </h2>
           <p className="text-lg text-muted-foreground">
             Real stories from real partners
           </p>
         </div>
 
-        <Carousel className="w-full max-w-4xl mx-auto">
+        <Carousel 
+          className="w-full max-w-3xl mx-auto"
+          plugins={[
+            Autoplay({
+              delay: 3000,
+              stopOnInteraction: true,
+            }),
+          ]}
+        >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <div className="bg-card rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10">
+                <div className="bg-card rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10">
                   <div className="flex flex-col items-center">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.alt}
-                      className="w-full max-w-2xl rounded-2xl shadow-md mb-6"
+                      className="w-full max-w-xl rounded-2xl shadow-md mb-4"
                     />
                     <div className="text-center">
-                      <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
+                      <h3 className="text-xl font-heading font-bold text-foreground mb-2">
                         {testimonial.title}
                       </h3>
-                      <p className="text-muted-foreground italic">
+                      <p className="text-muted-foreground italic text-sm">
                         {testimonial.description}
                       </p>
                     </div>

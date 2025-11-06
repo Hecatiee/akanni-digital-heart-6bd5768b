@@ -126,7 +126,7 @@ const Contact = () => {
                 <p className="text-lg leading-relaxed">
                   <strong className="text-accent">New to Àkanní?</strong> We&apos;d love to hear about your project. 
                   Whether it&apos;s a brand refresh, a new website, or a social impact initiative, 
-                  let&apos;s make it happen together! 🚀
+                  let&apos;s make it happen together!
                 </p>
               </div>
             </div>

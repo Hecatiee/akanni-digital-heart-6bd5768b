@@ -20,45 +20,45 @@ const Navbar = () => {
   const socialLinks = [
     { 
       icon: Linkedin, 
-      href: "https://www.linkedin.com/company/akanni", 
+      href: "https://www.linkedin.com/company/akanni-team-ab0047342/?viewAsMember=true", 
       label: "LinkedIn",
       color: "hover:text-primary" 
     },
     { 
       icon: Instagram, 
-      href: "https://www.instagram.com/akanni_studio", 
+      href: "https://www.instagram.com/_.akanni.__", 
       label: "Instagram",
       color: "hover:text-accent" 
     },
     { 
       icon: FileText, 
-      href: "/blog", 
+      href: "https://medium.com/@team.akanni", 
       label: "Blog",
       color: "hover:text-secondary" 
     },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border shadow-md">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            <img src={logo} alt="Àkanní Logo" className="h-10 w-auto" />
+            <img src={logo} alt="Àkanní Logo" className="h-14 w-auto" />
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {/* Nav Links */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-foreground hover:text-primary transition-colors font-medium"
+                  className="text-foreground hover:text-primary transition-colors font-medium text-lg"
                 >
                   {link.name}
                 </button>
@@ -66,7 +66,7 @@ const Navbar = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-3 border-l border-border pl-6">
+            <div className="flex items-center gap-4 border-l border-border pl-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -76,16 +76,16 @@ const Navbar = () => {
                   aria-label={social.label}
                   className={`text-muted-foreground ${social.color} transition-colors`}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-6 w-6" />
                 </a>
               ))}
               <Button
                 onClick={() => scrollToSection("contact")}
                 variant="outline"
-                size="sm"
+                size="default"
                 className="ml-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full"
               >
-                <Mail className="h-4 w-4 mr-2" />
+                <Mail className="h-5 w-5 mr-2" />
                 Contact
               </Button>
             </div>
@@ -97,7 +97,7 @@ const Navbar = () => {
             className="md:hidden text-foreground p-2 hover:bg-muted rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </button>
         </div>
 
