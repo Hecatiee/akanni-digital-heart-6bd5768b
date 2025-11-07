@@ -173,22 +173,28 @@ const Services = () => {
                       </CardHeader>
                     </Card>
                   </HoverCardTrigger>
-                  <HoverCardContent className="w-80 p-4 bg-card border-2 border-primary/20 shadow-2xl z-50" side="top" align="center">
+                  <HoverCardContent 
+                    className="w-80 p-5 bg-background/80 backdrop-blur-xl border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] z-50 rounded-2xl transform rotate-1" 
+                    side="top" 
+                    align="start"
+                    sideOffset={10}
+                  >
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
-                        <div className={`w-10 h-10 ${service.bgColor} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                        <div className={`w-10 h-10 ${service.bgColor} backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
                           <Icon className={`w-5 h-5 ${service.color}`} />
                         </div>
-                        <h4 className="font-bold text-base leading-tight">{service.title}</h4>
+                        <h4 className="font-bold text-base leading-tight bg-gradient-to-r from-primary to-cta bg-clip-text text-transparent">{service.title}</h4>
                       </div>
+                      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
                       <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                      <div className="space-y-1.5">
-                        <p className="text-xs font-semibold text-primary">What we do:</p>
-                        <ul className="space-y-1">
+                      <div className="space-y-2 bg-muted/30 backdrop-blur-sm rounded-lg p-3 border border-primary/10">
+                        <p className="text-xs font-semibold text-primary uppercase tracking-wide">What we do:</p>
+                        <ul className="space-y-1.5">
                           {service.points.map((point, i) => (
-                            <li key={i} className="text-xs text-muted-foreground flex items-start gap-1.5">
-                              <span className="text-primary mt-0.5">•</span>
-                              <span>{point}</span>
+                            <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                              <span className="text-primary mt-0.5 font-bold">•</span>
+                              <span className="leading-relaxed">{point}</span>
                             </li>
                           ))}
                         </ul>
