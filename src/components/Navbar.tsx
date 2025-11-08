@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Linkedin, Instagram, FileText, Mail, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
@@ -11,10 +13,16 @@ const Navbar = () => {
     setIsMenuOpen(false);
   };
 
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    setIsMenuOpen(false);
+  };
+
   const navLinks = [
-    { name: "About", id: "about" },
-    { name: "Our Services", id: "services" },
-    { name: "Testimonials", id: "testimonials" },
+    { name: "About", id: "about", type: "scroll" },
+    { name: "Our Services", id: "services", type: "scroll" },
+    { name: "Testimonials", id: "testimonials", type: "scroll" },
+    { name: "Internships", path: "/internships", type: "navigate" },
   ];
 
   const socialLinks = [
@@ -56,8 +64,12 @@ const Navbar = () => {
             <div className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
+                  key={link.name}
+                  onClick={() => 
+                    link.type === "scroll" 
+                      ? scrollToSection(link.id!) 
+                      : handleNavigation(link.path!)
+                  }
                   className="text-foreground hover:text-primary transition-colors font-medium text-lg"
                 >
                   {link.name}
@@ -107,8 +119,12 @@ const Navbar = () => {
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
-                  key={link.id}
-                  onClick={() => scrollToSection(link.id)}
+                  key={link.name}
+                  onClick={() => 
+                    link.type === "scroll" 
+                      ? scrollToSection(link.id!) 
+                      : handleNavigation(link.path!)
+                  }
                   className="text-left text-foreground hover:text-primary transition-colors font-medium py-2"
                 >
                   {link.name}
