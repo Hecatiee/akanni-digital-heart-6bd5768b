@@ -15,6 +15,38 @@ import { toast } from "sonner";
 import { Upload, ArrowLeft, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { z } from "zod";
+
+// Input validation schema
+const internshipApplicationSchema = z.object({
+  fullName: z
+    .string()
+    .trim()
+    .min(1, { message: "Full name is required" })
+    .max(100, { message: "Full name must be less than 100 characters" }),
+  email: z
+    .string()
+    .trim()
+    .email({ message: "Invalid email address" })
+    .max(255, { message: "Email must be less than 255 characters" }),
+  phone: z
+    .string()
+    .trim()
+    .min(10, { message: "Phone number must be at least 10 digits" })
+    .max(20, { message: "Phone number must be less than 20 characters" })
+    .regex(/^[+]?[\d\s\-()]+$/, { message: "Invalid phone number format" }),
+  domain: z
+    .string()
+    .trim()
+    .min(1, { message: "Domain is required" })
+    .max(100, { message: "Domain must be less than 100 characters" }),
+  location: z
+    .string()
+    .trim()
+    .min(1, { message: "Location is required" })
+    .max(200, { message: "Location must be less than 200 characters" }),
+  isFreelancer: z.boolean(),
+});
 
 const Internships = () => {
   const navigate = useNavigate();
@@ -55,13 +87,25 @@ const Internships = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate form data
+    const validationResult = internshipApplicationSchema.safeParse(formData);
+    
+    if (!validationResult.success) {
+      const firstError = validationResult.error.errors[0];
+      toast.error(firstError.message);
+      return;
+    }
+
+    if (!resumeFile) {
+      toast.error("Please upload your resume");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      if (!resumeFile) {
-        toast.error("Please upload your resume");
-        return;
-      }
+      const validatedData = validationResult.data;
 
       // Upload resume to storage
       const fileExt = resumeFile.name.split(".").pop();
@@ -79,16 +123,16 @@ const Internships = () => {
         .from("resumes")
         .getPublicUrl(filePath);
 
-      // Insert application to database
+      // Insert application to database with validated data
       const { error: insertError } = await supabase
         .from("internship_applications")
         .insert({
-          full_name: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          domain: formData.domain,
-          location: formData.location,
-          is_freelancer: formData.isFreelancer,
+          full_name: validatedData.fullName,
+          email: validatedData.email,
+          phone: validatedData.phone,
+          domain: validatedData.domain,
+          location: validatedData.location,
+          is_freelancer: validatedData.isFreelancer,
           resume_url: publicUrl,
         });
 
