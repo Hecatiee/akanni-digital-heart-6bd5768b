@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Upload, ArrowLeft } from "lucide-react";
+import { Upload, ArrowLeft, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -129,13 +129,44 @@ const Internships = () => {
             Back to Home
           </Button>
 
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
               Find Your Internship
             </h1>
             <p className="text-muted-foreground text-lg">
               Join our team and kickstart your career
             </p>
+          </div>
+
+          {/* Contact Info Section */}
+          <div className="mb-12 bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-2xl p-6 border border-border">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-primary" />
+                <div>
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <a 
+                    href="mailto:team.akanni@gmail.com"
+                    className="font-medium hover:text-primary transition-colors"
+                  >
+                    team.akanni@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="hidden md:block h-12 w-px bg-border" />
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-secondary" />
+                <div>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <a 
+                    href="tel:+919004138118"
+                    className="font-medium hover:text-secondary transition-colors"
+                  >
+                    +91 90041 38118
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <form onSubmit={handleSubmit} className="bg-card rounded-2xl shadow-lg p-8 border border-border">
