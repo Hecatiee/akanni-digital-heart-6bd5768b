@@ -328,12 +328,12 @@ const Internships = () => {
 
               {/* Resume Upload */}
               <div className="space-y-2">
-                <Label htmlFor="resume">Upload Resume * (Max 25MB)</Label>
+                <Label htmlFor="resume">Upload Resume * (1 PDF or DOC file, Max 25MB)</Label>
                 <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary transition-colors">
                   <input
                     id="resume"
                     type="file"
-                    accept=".pdf,.doc,.docx"
+                    accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                     onChange={handleFileChange}
                     className="hidden"
                     required
@@ -347,7 +347,7 @@ const Internships = () => {
                       {resumeFile ? resumeFile.name : "Click to upload or drag and drop"}
                     </span>
                     <span className="text-xs text-muted-foreground">
-                      PDF, DOC, DOCX (max 25MB)
+                      Only PDF or DOC/DOCX files accepted (max 25MB)
                     </span>
                   </label>
                 </div>
