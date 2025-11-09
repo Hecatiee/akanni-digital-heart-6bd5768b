@@ -30,7 +30,7 @@ const Hero = () => {
               <span className="text-accent">Real impact.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-xl text-justify">
               We&apos;re a one-stop digital studio that brings design, tech, and marketing together. 
               From AI-driven design to web apps and social impact projects, we turn ideas into reality.
             </p>

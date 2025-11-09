@@ -149,7 +149,7 @@ const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Our <span className="text-primary">Services</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-justify">
             Comprehensive solutions across multiple domains
           </p>
         </div>

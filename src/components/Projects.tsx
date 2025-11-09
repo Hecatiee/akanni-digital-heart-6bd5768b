@@ -65,7 +65,7 @@ const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Our <span className="text-primary">Highlights</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-justify">
             From national projects to community impact, here&apos;s what we&apos;ve been building
           </p>
         </div>

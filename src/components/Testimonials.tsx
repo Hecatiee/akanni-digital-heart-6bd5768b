@@ -46,7 +46,7 @@ const Testimonials = () => {
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
             Our Clients
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground text-justify">
             Real stories from real partners
           </p>
         </div>
