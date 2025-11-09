@@ -24,18 +24,18 @@ const projects = [
     bgColor: "bg-accent/10",
   },
   {
-    title: "Kawlathe Konnection",
-    description: "Community & sustainability project with Nupur Risbood (TEDx speaker)",
-    icon: Leaf,
-    color: "text-secondary",
-    bgColor: "bg-secondary/10",
-  },
-  {
     title: "CloudNautics Partnership",
     description: "From hackathon collaboration to long-term client relationship",
     icon: Cloud,
     color: "text-accent",
     bgColor: "bg-accent/10",
+  },
+  {
+    title: "Kawlathe Konnection",
+    description: "Community & sustainability project with Nupur Risbood (TEDx speaker)",
+    icon: Leaf,
+    color: "text-secondary",
+    bgColor: "bg-secondary/10",
   },
   {
     title: "Comic Bee",
