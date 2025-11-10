@@ -12,7 +12,9 @@ import {
 } from "@/components/ui/select";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
-import { Upload, ArrowLeft, Briefcase } from "lucide-react";
+import { Upload, ArrowLeft, Mail, Phone } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { z } from "zod";
 
 // Input validation schema
@@ -157,64 +159,65 @@ const Internships = () => {
   };
 
   return (
-    <main className="min-h-screen relative overflow-hidden bg-gradient-to-br from-[#2C1B47] via-[#4A2D5E] to-[#1A1A2E]">
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Mountains/Hills silhouettes */}
-        <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#1a1a2e]/80 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/4 bg-gradient-to-tr from-[#2C1B47]/60 to-transparent rounded-tr-full" />
-        <div className="absolute bottom-0 right-0 w-1/2 h-1/4 bg-gradient-to-tl from-[#4A2D5E]/60 to-transparent rounded-tl-full" />
-        
-        {/* Stars */}
-        <div className="absolute top-20 left-10 w-1 h-1 bg-white rounded-full animate-pulse" />
-        <div className="absolute top-40 left-1/4 w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: "0.5s" }} />
-        <div className="absolute top-32 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: "1s" }} />
-        <div className="absolute top-60 right-20 w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: "1.5s" }} />
-        <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: "0.8s" }} />
-        
-        {/* Clouds */}
-        <div className="absolute top-20 right-1/4 w-32 h-8 bg-white/10 rounded-full blur-xl" />
-        <div className="absolute top-40 left-1/3 w-40 h-10 bg-white/10 rounded-full blur-xl" />
-        <div className="absolute top-60 right-1/3 w-36 h-9 bg-white/10 rounded-full blur-xl" />
-      </div>
+    <main className="min-h-screen bg-background">
+      <Navbar />
+      
+      <div className="pt-32 pb-20 px-4">
+        <div className="container mx-auto max-w-3xl">
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/")}
+            className="mb-8 -ml-4"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Home
+          </Button>
 
-      {/* Back Button */}
-      <div className="absolute top-6 left-6 z-20">
-        <Button
-          variant="ghost"
-          onClick={() => navigate("/")}
-          className="text-white hover:bg-white/20 backdrop-blur-sm border border-white/20"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Home
-        </Button>
-      </div>
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+              Find Your Internship
+            </h1>
+            <p className="text-muted-foreground text-lg">
+              Join our team and kickstart your career
+            </p>
+          </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-20">
-        <div className="w-full max-w-2xl">
-          {/* Glass-morphism Card */}
-          <div className="bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 md:p-12">
-            {/* Header */}
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full mb-4 shadow-lg">
-                <Briefcase className="h-8 w-8 text-white" />
+          {/* Contact Info Section */}
+          <div className="mb-12 bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-2xl p-6 border border-border">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-primary" />
+                <div>
+                  <p className="text-sm text-muted-foreground">Email</p>
+                  <a 
+                    href="mailto:team.akanni@gmail.com"
+                    className="font-medium hover:text-primary transition-colors"
+                  >
+                    team.akanni@gmail.com
+                  </a>
+                </div>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-                Join Our Team
-              </h1>
-              <p className="text-white/80 text-lg">
-                Start your journey with Àkanní
-              </p>
+              <div className="hidden md:block h-12 w-px bg-border" />
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-secondary" />
+                <div>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <a 
+                    href="tel:+919004138118"
+                    className="font-medium hover:text-secondary transition-colors"
+                  >
+                    +91 90041 38118
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="bg-card rounded-2xl shadow-lg p-8 border border-border">
+            <div className="space-y-6">
               {/* Full Name */}
               <div className="space-y-2">
-                <Label htmlFor="fullName" className="text-white font-medium">
-                  Full Name *
-                </Label>
+                <Label htmlFor="fullName">Full Name *</Label>
                 <Input
                   id="fullName"
                   placeholder="Enter your full name"
@@ -222,16 +225,13 @@ const Internships = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, fullName: e.target.value })
                   }
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/50 focus:bg-white/25 focus:border-white/50"
                   required
                 />
               </div>
 
               {/* Email */}
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-white font-medium">
-                  Email *
-                </Label>
+                <Label htmlFor="email">Email *</Label>
                 <Input
                   id="email"
                   type="email"
@@ -240,16 +240,13 @@ const Internships = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/50 focus:bg-white/25 focus:border-white/50"
                   required
                 />
               </div>
 
               {/* Phone */}
               <div className="space-y-2">
-                <Label htmlFor="phone" className="text-white font-medium">
-                  Phone Number *
-                </Label>
+                <Label htmlFor="phone">Phone Number</Label>
                 <Input
                   id="phone"
                   type="tel"
@@ -258,16 +255,12 @@ const Internships = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
                   }
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/50 focus:bg-white/25 focus:border-white/50"
-                  required
                 />
               </div>
 
               {/* Domain */}
               <div className="space-y-2">
-                <Label htmlFor="domain" className="text-white font-medium">
-                  Domain *
-                </Label>
+                <Label htmlFor="domain">Domain *</Label>
                 <Select
                   value={formData.domain}
                   onValueChange={(value) =>
@@ -275,10 +268,10 @@ const Internships = () => {
                   }
                   required
                 >
-                  <SelectTrigger className="bg-white/20 border-white/30 text-white focus:bg-white/25 focus:border-white/50">
+                  <SelectTrigger>
                     <SelectValue placeholder="Select your domain" />
                   </SelectTrigger>
-                  <SelectContent className="bg-card/95 backdrop-blur-xl border-white/20">
+                  <SelectContent>
                     {domains.map((domain) => (
                       <SelectItem key={domain} value={domain}>
                         {domain}
@@ -290,9 +283,7 @@ const Internships = () => {
 
               {/* Location */}
               <div className="space-y-2">
-                <Label htmlFor="location" className="text-white font-medium">
-                  Location *
-                </Label>
+                <Label htmlFor="location">Location *</Label>
                 <Input
                   id="location"
                   placeholder="e.g., Work from home, New York, Remote"
@@ -300,16 +291,15 @@ const Internships = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, location: e.target.value })
                   }
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/50 focus:bg-white/25 focus:border-white/50"
                   required
                 />
               </div>
 
               {/* Are you a Freelancer */}
               <div className="space-y-2">
-                <Label className="text-white font-medium">Are You a Freelancer? *</Label>
-                <div className="flex gap-6">
-                  <label className="flex items-center gap-2 cursor-pointer text-white">
+                <Label>Are You a Freelancer? *</Label>
+                <div className="flex gap-4">
+                  <label className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="radio"
                       name="freelancer"
@@ -317,11 +307,11 @@ const Internships = () => {
                       onChange={() =>
                         setFormData({ ...formData, isFreelancer: true })
                       }
-                      className="w-4 h-4 accent-primary"
+                      className="w-4 h-4 text-primary"
                     />
                     <span>Yes</span>
                   </label>
-                  <label className="flex items-center gap-2 cursor-pointer text-white">
+                  <label className="flex items-center gap-2 cursor-pointer">
                     <input
                       type="radio"
                       name="freelancer"
@@ -329,7 +319,7 @@ const Internships = () => {
                       onChange={() =>
                         setFormData({ ...formData, isFreelancer: false })
                       }
-                      className="w-4 h-4 accent-primary"
+                      className="w-4 h-4 text-primary"
                     />
                     <span>No</span>
                   </label>
@@ -338,10 +328,8 @@ const Internships = () => {
 
               {/* Resume Upload */}
               <div className="space-y-2">
-                <Label htmlFor="resume" className="text-white font-medium">
-                  Upload Resume * (Max 25MB)
-                </Label>
-                <div className="border-2 border-dashed border-white/30 rounded-xl p-6 text-center hover:border-white/50 transition-colors bg-white/5">
+                <Label htmlFor="resume">Upload Resume * (1 PDF or DOC file, Max 25MB)</Label>
+                <div className="border-2 border-dashed border-border rounded-lg p-6 text-center hover:border-primary transition-colors">
                   <input
                     id="resume"
                     type="file"
@@ -354,12 +342,12 @@ const Internships = () => {
                     htmlFor="resume"
                     className="cursor-pointer flex flex-col items-center gap-2"
                   >
-                    <Upload className="h-8 w-8 text-white/70" />
-                    <span className="text-sm text-white/80">
+                    <Upload className="h-8 w-8 text-muted-foreground" />
+                    <span className="text-sm text-muted-foreground">
                       {resumeFile ? resumeFile.name : "Click to upload or drag and drop"}
                     </span>
-                    <span className="text-xs text-white/60">
-                      PDF or DOC/DOCX only
+                    <span className="text-xs text-muted-foreground">
+                      Only PDF or DOC/DOCX files accepted (max 25MB)
                     </span>
                   </label>
                 </div>
@@ -369,34 +357,16 @@ const Internships = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-primary via-accent to-secondary hover:opacity-90 text-white h-12 text-lg font-semibold shadow-xl rounded-xl"
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground h-12 text-lg"
               >
-                {isSubmitting ? "Submitting..." : "Submit Application"}
+                {isSubmitting ? "Submitting..." : "Apply"}
               </Button>
-            </form>
-
-            {/* Contact Info */}
-            <div className="mt-8 pt-8 border-t border-white/20 text-center">
-              <p className="text-white/70 text-sm mb-2">Need help?</p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
-                <a 
-                  href="mailto:team.akanni@gmail.com"
-                  className="text-white hover:text-primary transition-colors"
-                >
-                  team.akanni@gmail.com
-                </a>
-                <span className="hidden sm:inline text-white/30">•</span>
-                <a 
-                  href="tel:+919004138118"
-                  className="text-white hover:text-secondary transition-colors"
-                >
-                  +91 90041 38118
-                </a>
-              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 };
