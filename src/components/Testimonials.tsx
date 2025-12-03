@@ -12,25 +12,29 @@ const Testimonials = () => {
       image: boiTestimonial,
       alt: "Mukund Satpute - Federation of Bank of India Pensioners and Retirees Associations Testimonial",
       title: "Mukund Satpute",
-      description: "Federation of Bank of India Pensioners and Retirees Associations"
+      description: "Federation of Bank of India Pensioners and Retirees Associations",
+      link: "https://foboipara.in"
     },
     {
       image: comicBeeTestimonial,
       alt: "Santosh Pisharody - Comic Book Designing Testimonial",
       title: "Santosh Pisharody",
-      description: "Comic Book (Designing)"
+      description: "Comic Book (Designing)",
+      link: "https://www.instagram.com/spisharody7/"
     },
     {
       image: nupurTestimonial,
-      alt: "Nupur Risbood - Social Media Marketing Testimonial",
+      alt: "Nupur Risbood - Kawalthe Konnections Testimonial",
       title: "Nupur Risbood",
-      description: "Social Media Marketing"
+      description: "Kawalthe Konnections",
+      link: "https://www.instagram.com/_kawalthe_konnection_/"
     },
     {
       image: manishaTestimonial,
-      alt: "Mrs. Manisha Athavle - YouTube Management Testimonial",
+      alt: "Mrs. Manisha Athavle - Katha Sudha Testimonial",
       title: "Mrs. Manisha Athavle",
-      description: "YouTube Management"
+      description: "Katha Sudha",
+      link: "https://www.youtube.com/@Katha.Sudha_2025"
     }
   ];
 
@@ -67,7 +71,12 @@ const Testimonials = () => {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <div className="bg-card rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10">
+                <a 
+                  href={testimonial.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block bg-card rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10 cursor-pointer"
+                >
                   <div className="flex flex-col items-center">
                     <img 
                       src={testimonial.image} 
@@ -83,7 +92,7 @@ const Testimonials = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </a>
               </CarouselItem>
             ))}
           </CarouselContent>
