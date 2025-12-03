@@ -71,12 +71,7 @@ const Testimonials = () => {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <a 
-                  href={testimonial.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="block bg-card rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10 cursor-pointer"
-                >
+                <div className="bg-card rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10">
                   <div className="flex flex-col items-center">
                     <img 
                       src={testimonial.image} 
@@ -87,12 +82,21 @@ const Testimonials = () => {
                       <h3 className="text-xl font-heading font-bold text-foreground mb-2">
                         {testimonial.title}
                       </h3>
-                      <p className="text-muted-foreground italic text-sm">
+                      <p className="text-muted-foreground italic text-sm mb-3">
                         {testimonial.description}
                       </p>
+                      <a 
+                        href={testimonial.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Visit Profile →
+                      </a>
                     </div>
                   </div>
-                </a>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
