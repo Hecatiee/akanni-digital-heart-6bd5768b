@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Share2, Monitor, BarChart3, Calendar, Smartphone, Palette, Users, Package, Settings, Search } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
   {
@@ -137,6 +140,90 @@ const services = [
   },
 ];
 
+interface ServiceCardProps {
+  service: typeof services[0];
+  index: number;
+}
+
+const ServiceCardContent = ({ service }: { service: typeof services[0] }) => {
+  const Icon = service.icon;
+  return (
+    <div className="space-y-3">
+      <div className="flex items-start gap-3">
+        <div className={`w-10 h-10 ${service.bgColor} backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
+          <Icon className={`w-5 h-5 ${service.color}`} />
+        </div>
+        <h4 className="font-bold text-base leading-tight bg-gradient-to-r from-primary to-cta bg-clip-text text-transparent">{service.title}</h4>
+      </div>
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+      <div className="space-y-2 bg-muted/30 backdrop-blur-sm rounded-lg p-3 border border-primary/10">
+        <p className="text-xs font-semibold text-primary uppercase tracking-wide">What we do:</p>
+        <ul className="space-y-1.5">
+          {service.points.map((point, i) => (
+            <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+              <span className="text-primary mt-0.5 font-bold">•</span>
+              <span className="leading-relaxed">{point}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const ServiceCard = ({ service, index }: ServiceCardProps) => {
+  const Icon = service.icon;
+  const isMobile = useIsMobile();
+
+  const cardElement = (
+    <Card 
+      className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in cursor-pointer"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <CardHeader className="pb-3">
+        <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
+          <Icon className={`w-6 h-6 ${service.color}`} />
+        </div>
+        <CardTitle className="text-sm font-bold leading-tight">{service.title}</CardTitle>
+      </CardHeader>
+    </Card>
+  );
+
+  // Use Dialog for mobile (click-based), HoverCard for desktop
+  if (isMobile) {
+    return (
+      <Dialog>
+        <DialogTrigger asChild>
+          {cardElement}
+        </DialogTrigger>
+        <DialogContent className="max-w-[90vw] rounded-2xl bg-background/95 backdrop-blur-xl border border-primary/30">
+          <DialogHeader>
+            <DialogTitle className="sr-only">{service.title}</DialogTitle>
+          </DialogHeader>
+          <ServiceCardContent service={service} />
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
+  return (
+    <HoverCard openDelay={200}>
+      <HoverCardTrigger asChild>
+        {cardElement}
+      </HoverCardTrigger>
+      <HoverCardContent 
+        className="w-80 p-5 bg-background/80 backdrop-blur-xl border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] z-50 rounded-2xl transform rotate-1" 
+        side="top" 
+        align="start"
+        sideOffset={10}
+      >
+        <ServiceCardContent service={service} />
+      </HoverCardContent>
+    </HoverCard>
+  );
+};
+
 const Services = () => {
   return (
     <section id="services" className="py-20 relative overflow-hidden bg-muted/30">
@@ -155,160 +242,25 @@ const Services = () => {
         </div>
 
         <div className="max-w-6xl mx-auto space-y-4">
-          {/* First row - 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {services.slice(0, 4).map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <HoverCard key={index} openDelay={200}>
-                  <HoverCardTrigger asChild>
-                    <Card 
-                      className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in cursor-pointer"
-                      style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                      <CardHeader className="pb-3">
-                        <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
-                          <Icon className={`w-6 h-6 ${service.color}`} />
-                        </div>
-                        <CardTitle className="text-sm font-bold leading-tight">{service.title}</CardTitle>
-                      </CardHeader>
-                    </Card>
-                  </HoverCardTrigger>
-                  <HoverCardContent 
-                    className="w-80 p-5 bg-background/80 backdrop-blur-xl border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] z-50 rounded-2xl transform rotate-1" 
-                    side="top" 
-                    align="start"
-                    sideOffset={10}
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <div className={`w-10 h-10 ${service.bgColor} backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                          <Icon className={`w-5 h-5 ${service.color}`} />
-                        </div>
-                        <h4 className="font-bold text-base leading-tight bg-gradient-to-r from-primary to-cta bg-clip-text text-transparent">{service.title}</h4>
-                      </div>
-                      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                      <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                      <div className="space-y-2 bg-muted/30 backdrop-blur-sm rounded-lg p-3 border border-primary/10">
-                        <p className="text-xs font-semibold text-primary uppercase tracking-wide">What we do:</p>
-                        <ul className="space-y-1.5">
-                          {service.points.map((point, i) => (
-                            <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                              <span className="text-primary mt-0.5 font-bold">•</span>
-                              <span className="leading-relaxed">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-              );
-            })}
+          {/* First row - 4 cards on desktop, 2 on tablet, 1 on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {services.slice(0, 4).map((service, index) => (
+              <ServiceCard key={index} service={service} index={index} />
+            ))}
           </div>
 
           {/* Second row - 3 cards offset */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:px-[12.5%]">
-            {services.slice(4, 7).map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <HoverCard key={index + 4} openDelay={200}>
-                  <HoverCardTrigger asChild>
-                    <Card 
-                      className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in cursor-pointer"
-                      style={{ animationDelay: `${(index + 4) * 0.1}s` }}
-                    >
-                      <CardHeader className="pb-3">
-                        <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
-                          <Icon className={`w-6 h-6 ${service.color}`} />
-                        </div>
-                        <CardTitle className="text-sm font-bold leading-tight">{service.title}</CardTitle>
-                      </CardHeader>
-                    </Card>
-                  </HoverCardTrigger>
-                  <HoverCardContent 
-                    className="w-80 p-5 bg-background/80 backdrop-blur-xl border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] z-50 rounded-2xl transform rotate-1" 
-                    side="top" 
-                    align="start"
-                    sideOffset={10}
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <div className={`w-10 h-10 ${service.bgColor} backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                          <Icon className={`w-5 h-5 ${service.color}`} />
-                        </div>
-                        <h4 className="font-bold text-base leading-tight bg-gradient-to-r from-primary to-cta bg-clip-text text-transparent">{service.title}</h4>
-                      </div>
-                      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                      <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                      <div className="space-y-2 bg-muted/30 backdrop-blur-sm rounded-lg p-3 border border-primary/10">
-                        <p className="text-xs font-semibold text-primary uppercase tracking-wide">What we do:</p>
-                        <ul className="space-y-1.5">
-                          {service.points.map((point, i) => (
-                            <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                              <span className="text-primary mt-0.5 font-bold">•</span>
-                              <span className="leading-relaxed">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-              );
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:px-[12.5%]">
+            {services.slice(4, 7).map((service, index) => (
+              <ServiceCard key={index + 4} service={service} index={index + 4} />
+            ))}
           </div>
 
           {/* Third row - 3 cards offset differently */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:px-[25%]">
-            {services.slice(7, 10).map((service, index) => {
-              const Icon = service.icon;
-              return (
-                <HoverCard key={index + 7} openDelay={200}>
-                  <HoverCardTrigger asChild>
-                    <Card 
-                      className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in cursor-pointer"
-                      style={{ animationDelay: `${(index + 7) * 0.1}s` }}
-                    >
-                      <CardHeader className="pb-3">
-                        <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
-                          <Icon className={`w-6 h-6 ${service.color}`} />
-                        </div>
-                        <CardTitle className="text-sm font-bold leading-tight">{service.title}</CardTitle>
-                      </CardHeader>
-                    </Card>
-                  </HoverCardTrigger>
-                  <HoverCardContent 
-                    className="w-80 p-5 bg-background/80 backdrop-blur-xl border border-primary/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.18)] z-50 rounded-2xl transform rotate-1" 
-                    side="top" 
-                    align="start"
-                    sideOffset={10}
-                  >
-                    <div className="space-y-3">
-                      <div className="flex items-start gap-3">
-                        <div className={`w-10 h-10 ${service.bgColor} backdrop-blur-sm rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
-                          <Icon className={`w-5 h-5 ${service.color}`} />
-                        </div>
-                        <h4 className="font-bold text-base leading-tight bg-gradient-to-r from-primary to-cta bg-clip-text text-transparent">{service.title}</h4>
-                      </div>
-                      <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-                      <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-                      <div className="space-y-2 bg-muted/30 backdrop-blur-sm rounded-lg p-3 border border-primary/10">
-                        <p className="text-xs font-semibold text-primary uppercase tracking-wide">What we do:</p>
-                        <ul className="space-y-1.5">
-                          {service.points.map((point, i) => (
-                            <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                              <span className="text-primary mt-0.5 font-bold">•</span>
-                              <span className="leading-relaxed">{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-              );
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:px-[12.5%]">
+            {services.slice(7, 10).map((service, index) => (
+              <ServiceCard key={index + 7} service={service} index={index + 7} />
+            ))}
           </div>
         </div>
       </div>
