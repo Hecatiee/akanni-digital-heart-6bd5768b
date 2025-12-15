@@ -21,17 +21,19 @@ const services = [
     ]
   },
   {
-    title: "Web Development",
+    title: "Web Development & Cyber Security",
     icon: Monitor,
     color: "text-cta",
     bgColor: "bg-cta/10",
-    description: "We create impactful, responsive, and user-friendly websites tailored to your brand identity.",
+    description: "We create impactful, responsive, and secure websites tailored to your brand identity, with comprehensive cyber security solutions.",
     points: [
       "Frontend & backend development",
       "UI/UX design & optimization",
       "Domain and hosting setup",
       "Website maintenance & upgrades",
-      "Integration with SEO and analytics tools"
+      "Integration with SEO and analytics tools",
+      "Cyber security audits & vulnerability assessment",
+      "Data protection & secure infrastructure"
     ]
   },
   {
