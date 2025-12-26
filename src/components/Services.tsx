@@ -228,17 +228,17 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 relative overflow-hidden bg-muted/30">
+    <section id="services" className="py-16 md:py-20 relative overflow-hidden bg-muted/30">
       {/* Background blobs */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cta/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-0 right-0 w-60 md:w-80 h-60 md:h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-cta/10 rounded-full blur-3xl -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 md:mb-12 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Our <span className="text-primary">Services</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-justify">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-justify">
             Comprehensive solutions across multiple domains
           </p>
         </div>

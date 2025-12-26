@@ -39,18 +39,18 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="relative py-20 px-6 overflow-hidden bg-gradient-to-b from-background to-secondary/20">
+    <section className="relative py-16 md:py-20 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-background to-secondary/20">
       {/* Background blobs */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl blob-animation" />
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl blob-animation-delayed" />
       
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <Quote className="w-12 h-12 mx-auto mb-4 text-primary float-animation" />
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+        <div className="text-center mb-8 md:mb-12 animate-fade-in">
+          <Quote className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-primary float-animation" />
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
             Our Clients
           </h2>
-          <p className="text-lg text-muted-foreground text-justify">
+          <p className="text-base sm:text-lg text-muted-foreground text-justify">
             Real stories from real partners
           </p>
         </div>

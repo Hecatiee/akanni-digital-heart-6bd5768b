@@ -2,13 +2,13 @@ import teamCircle from "@/assets/team-circle.png";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="py-16 md:py-20 relative overflow-hidden">
       {/* Background blob */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-20 right-0 w-64 md:w-96 h-64 md:h-96 bg-primary/10 rounded-full blur-3xl -z-10" />
       
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-10 md:mb-16 animate-fade-in">
             Our <span className="text-primary">Story</span>
           </h2>
 
@@ -27,8 +27,8 @@ const About = () => {
             </div>
 
             <div className="space-y-8 text-lg leading-relaxed">
-              <div className="bg-gradient-to-r from-cta/20 to-primary/20 rounded-3xl p-8 shadow-lg border-2 border-cta/30 hover:scale-105 transition-transform duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-cta">Àkanní 2.0: Digital Inclusion Movement</h3>
+              <div className="bg-gradient-to-r from-cta/20 to-primary/20 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg border-2 border-cta/30 hover:scale-[1.02] md:hover:scale-105 transition-transform duration-300">
+                <h3 className="text-xl md:text-2xl font-bold mb-4 text-cta">Àkanní 2.0: Digital Inclusion Movement</h3>
                 <p className="mb-4 text-justify">
                   Now we&apos;re launching <strong>Àkanní 2.0</strong>, a focused movement for digital inclusion. 
                   This phase is practical, not performative.
