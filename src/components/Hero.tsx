@@ -8,19 +8,19 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
       {/* Animated blob backgrounds */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl blob-animation" />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/20 rounded-full blur-3xl blob-animation-delayed" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-4 sm:left-10 w-40 sm:w-64 h-40 sm:h-64 bg-primary/20 rounded-full blur-3xl blob-animation" />
+        <div className="absolute bottom-20 right-4 sm:right-10 w-52 sm:w-80 h-52 sm:h-80 bg-secondary/20 rounded-full blur-3xl blob-animation-delayed" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-96 h-64 sm:h-96 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text content */}
-          <div className="space-y-6 text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <div className="space-y-4 sm:space-y-6 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               <span className="text-primary">Àkanní</span>
               <br />
               <span className="text-foreground">One roof.</span>
@@ -30,7 +30,7 @@ const Hero = () => {
               <span className="text-accent">Real impact.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-xl text-justify">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl text-justify">
               We&apos;re a one-stop digital studio that brings design, tech, and marketing together. 
               From AI-driven design to web apps and social impact projects, we turn ideas into reality.
             </p>
@@ -39,16 +39,16 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 onClick={scrollToContact}
-                className="bg-cta hover:bg-cta/90 text-cta-foreground font-heading text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                className="bg-cta hover:bg-cta/90 text-cta-foreground font-heading text-base sm:text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
                 Let's Build Together
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-heading text-lg rounded-full transition-all hover:scale-105"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-heading text-base sm:text-lg rounded-full transition-all hover:scale-105"
               >
                 Our Story
               </Button>

@@ -76,11 +76,11 @@ const Contact = () => {
       
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-8 md:mb-12 animate-fade-in">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Let's <span className="text-primary">Connect</span>
             </h2>
-            <p className="text-xl text-muted-foreground text-justify">
+            <p className="text-lg sm:text-xl text-muted-foreground text-justify">
               Ready to build something amazing together? Drop us a message!
             </p>
           </div>

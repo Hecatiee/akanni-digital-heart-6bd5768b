@@ -55,24 +55,24 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="py-16 md:py-20 relative overflow-hidden">
       {/* Background blobs */}
-      <div className="absolute top-0 left-0 w-80 h-80 bg-secondary/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute top-0 left-0 w-60 md:w-80 h-60 md:h-80 bg-secondary/10 rounded-full blur-3xl -z-10" />
+      <div className="absolute bottom-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-accent/10 rounded-full blur-3xl -z-10" />
       
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+        <div className="text-center mb-8 md:mb-12 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
             Our <span className="text-primary">Highlights</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-justify">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-justify">
             From national projects to community impact, here&apos;s what we&apos;ve been building
           </p>
         </div>
 
         <div className="max-w-6xl mx-auto space-y-4">
           {/* First row - 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {projects.slice(0, 4).map((project, index) => {
               const Icon = project.icon;
               return (
@@ -82,13 +82,13 @@ const Projects = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardHeader>
-                    <div className={`w-16 h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
-                      <Icon className={`w-8 h-8 ${project.color}`} />
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
+                      <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
                     </div>
-                    <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
+                    <CardTitle className="text-lg sm:text-xl font-bold">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base leading-relaxed">
+                    <CardDescription className="text-sm sm:text-base leading-relaxed">
                       {project.description}
                     </CardDescription>
                   </CardContent>
@@ -98,7 +98,7 @@ const Projects = () => {
           </div>
 
           {/* Second row - 3 cards offset */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:px-[12.5%]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:px-[12.5%]">
             {projects.slice(4, 7).map((project, index) => {
               const Icon = project.icon;
               return (
@@ -108,13 +108,13 @@ const Projects = () => {
                   style={{ animationDelay: `${(index + 4) * 0.1}s` }}
                 >
                   <CardHeader>
-                    <div className={`w-16 h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
-                      <Icon className={`w-8 h-8 ${project.color}`} />
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
+                      <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
                     </div>
-                    <CardTitle className="text-xl font-bold">{project.title}</CardTitle>
+                    <CardTitle className="text-lg sm:text-xl font-bold">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <CardDescription className="text-base leading-relaxed">
+                    <CardDescription className="text-sm sm:text-base leading-relaxed">
                       {project.description}
                     </CardDescription>
                   </CardContent>
