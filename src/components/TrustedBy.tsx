@@ -2,6 +2,7 @@ const companies = [
   { name: "BOI", style: "font-serif font-bold uppercase tracking-widest" },
   { name: "MIT WPU", style: "font-heading font-black" },
   { name: "Heartfullness", style: "font-serif italic" },
+  { name: "FZounders", style: "font-heading font-bold tracking-wide" },
 ];
 
 const TrustedBy = () => {
