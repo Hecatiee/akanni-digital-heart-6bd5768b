@@ -50,7 +50,7 @@ const Testimonials = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
             Our Clients
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground text-justify">
+          <p className="text-base sm:text-lg text-muted-foreground text-center">
             Real stories from real partners
           </p>
         </div>
