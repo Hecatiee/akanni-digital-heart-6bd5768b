@@ -39,11 +39,11 @@ const About = () => {
                   <h3 className="text-xl md:text-2xl font-bold text-cta">Àkanní 2.0: Digital Inclusion Movement</h3>
                   <ChevronRight className="w-6 h-6 text-cta group-hover:translate-x-1 transition-transform" />
                 </div>
-                <p className="mb-4 text-justify">
+                <p className="mb-4 text-left">
                   Now we&apos;re launching <strong>Àkanní 2.0</strong>, a focused movement for digital inclusion. 
                   This phase is practical, not performative.
                 </p>
-                <p className="text-justify">
+                <p className="text-left">
                   We will help underserved communities build and own their digital presence: brand representation, 
                   social media, web profiles and e-commerce, without charging them. We want to hand them a stage 
                   so they can be visible, respected, and self-sufficient in the digital world.
@@ -54,7 +54,7 @@ const About = () => {
               <Akanni2Modal open={isModalOpen} onOpenChange={setIsModalOpen} />
 
               <div className="text-center md:text-left py-8 animate-fade-in clear-right md:clear-none">
-                <p className="text-2xl font-bold text-foreground hover:scale-105 transition-transform duration-300 text-justify">
+                <p className="text-2xl font-bold text-foreground hover:scale-105 transition-transform duration-300 text-left">
                   Àkanní is more than a service studio.<br />
                   <span className="text-primary">we&apos;re a growth partner</span> that blends 
                   <span className="text-secondary"> creativity</span>, 
