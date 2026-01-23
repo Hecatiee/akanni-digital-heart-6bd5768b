@@ -4,20 +4,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Heart, Target, Rocket, Users, Quote } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
-
-import boiTestimonial from "@/assets/boi-testimonial.png";
-import comicBeeTestimonial from "@/assets/comic-bee-testimonial.png";
-import nupurTestimonial from "@/assets/nupur-testimonial.png";
-import manishaTestimonial from "@/assets/manisha-testimonial.png";
+import { Heart, Target, Rocket, Users } from "lucide-react";
 
 interface Akanni2ModalProps {
   open: boolean;
@@ -38,33 +25,6 @@ const futureOutcomes = [
   { icon: Target, title: "Sustainable Impact", description: "Creating lasting change through digital literacy" },
 ];
 
-const testimonials = [
-  {
-    name: "Mukund Satpute",
-    role: "BOI Pensioners Association",
-    image: boiTestimonial,
-    quote: "Àkanní 2.0 gave our association a voice in the digital world. We can now reach all 700+ members effortlessly.",
-  },
-  {
-    name: "Santosh Pisharody",
-    role: "Comic Bee Studios",
-    image: comicBeeTestimonial,
-    quote: "Their commitment to digital inclusion is inspiring. They helped us connect with audiences we never knew existed.",
-  },
-  {
-    name: "Nupur",
-    role: "Kawlathe Konnection",
-    image: nupurTestimonial,
-    quote: "The team understood our vision and brought it to life digitally. True partners in our journey.",
-  },
-  {
-    name: "Manisha",
-    role: "Katha Sudha",
-    image: manishaTestimonial,
-    quote: "From zero online presence to a thriving digital community - Àkanní 2.0 made it possible.",
-  },
-];
-
 const Akanni2Modal = ({ open, onOpenChange }: Akanni2ModalProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -83,19 +43,29 @@ const Akanni2Modal = ({ open, onOpenChange }: Akanni2ModalProps) => {
           <section className="space-y-4">
             <h3 className="text-xl font-bold flex items-center gap-2 text-primary">
               <Heart className="w-5 h-5" />
-              Why We Started
+              The Story of Àkanní 2.0
             </h3>
-            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-4 sm:p-6">
+            <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-4 sm:p-6 space-y-4">
               <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                In a world racing towards digital transformation, millions are being left behind. 
-                We witnessed small businesses, artisans, and community organizations struggling to 
-                establish their digital identity—not because they lacked talent or value, but because 
-                they lacked access and resources.
+                When I was 15 or 16, I was travelling in a Mumbai local train. A transgender woman entered the compartment, quietly selling jhumkas. She spoke with warmth and dignity—but most people looked away. Not out of hatred, but out of habit.
               </p>
-              <p className="text-muted-foreground leading-relaxed mt-4 text-sm sm:text-base">
-                <strong className="text-foreground">Àkanní 2.0</strong> was born from a simple belief: 
-                everyone deserves a place in the digital world. We're not just building websites; 
-                we're building bridges to opportunity, visibility, and self-sufficiency.
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base italic">
+                That moment stayed with me.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                It made me question why some communities—transgender individuals, backward or underrepresented groups—are always left behind, even when they're trying to create something honest for themselves. Why is opportunity still selective? Why do we hesitate to listen?
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                Years later, when I started Àkanní, I knew this thought couldn't remain just a memory. That's how <strong className="text-foreground">Àkanní 2.0</strong> came to life.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                Àkanní 2.0 is our community upliftment initiative. We work with individuals or organizations from marginalized communities for 45 days—completely free of cost—sharing skills, guidance, and support to help them grow sustainably.
+              </p>
+              <p className="text-foreground font-semibold text-sm sm:text-base">
+                This isn't charity. It's a belief in equal beginnings.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base italic">
+                Àkanní 2.0 exists because sometimes, a small moment in a crowded train can shape a purpose for life.
               </p>
             </div>
           </section>
@@ -144,45 +114,6 @@ const Akanni2Modal = ({ open, onOpenChange }: Akanni2ModalProps) => {
             </div>
           </section>
 
-          {/* Client Testimonials */}
-          <section className="space-y-4">
-            <h3 className="text-xl font-bold flex items-center gap-2 text-cta">
-              <Quote className="w-5 h-5" />
-              Client Stories
-            </h3>
-            <Carousel
-              opts={{ loop: true }}
-              plugins={[Autoplay({ delay: 4000, stopOnInteraction: true })]}
-              className="w-full"
-            >
-              <CarouselContent>
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2">
-                    <div className="bg-gradient-to-br from-card to-cta/5 rounded-xl p-4 sm:p-6 border border-border/50 h-full">
-                      <div className="flex items-center gap-3 mb-4">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-12 h-12 rounded-full object-cover border-2 border-cta/30"
-                        />
-                        <div>
-                          <h4 className="font-bold text-foreground text-sm">{testimonial.name}</h4>
-                          <p className="text-xs text-muted-foreground">{testimonial.role}</p>
-                        </div>
-                      </div>
-                      <p className="text-sm text-muted-foreground italic leading-relaxed">
-                        "{testimonial.quote}"
-                      </p>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <div className="flex justify-center gap-2 mt-4">
-                <CarouselPrevious className="relative static translate-y-0" />
-                <CarouselNext className="relative static translate-y-0" />
-              </div>
-            </Carousel>
-          </section>
         </div>
       </DialogContent>
     </Dialog>
