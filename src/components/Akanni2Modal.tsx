@@ -81,9 +81,7 @@ const Akanni2Modal = ({ open, onOpenChange }: Akanni2ModalProps) => {
               <div className="space-y-4">
                 {milestones.map((milestone, index) => (
                   <div key={index} className="flex gap-4 items-start">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-cta to-primary flex items-center justify-center text-white text-xs font-bold shrink-0 z-10">
-                      {milestone.year.slice(-2)}
-                    </div>
+                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-cta to-primary shrink-0 z-10 mt-1.5" />
                     <div className="bg-card/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 flex-1 border border-border/50 hover:border-cta/30 transition-colors">
                       <h4 className="font-bold text-foreground">{milestone.title}</h4>
                       <p className="text-sm text-muted-foreground">{milestone.description}</p>
