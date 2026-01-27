@@ -76,19 +76,13 @@ const Akanni2Modal = ({ open, onOpenChange }: Akanni2ModalProps) => {
               <Rocket className="w-5 h-5" />
               Our Journey
             </h3>
-            <div className="relative">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cta via-primary to-secondary hidden sm:block" />
-              <div className="space-y-4">
-                {milestones.map((milestone, index) => (
-                  <div key={index} className="flex gap-4 items-start">
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-cta to-primary shrink-0 z-10 mt-1.5" />
-                    <div className="bg-card/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 flex-1 border border-border/50 hover:border-cta/30 transition-colors">
-                      <h4 className="font-bold text-foreground">{milestone.title}</h4>
-                      <p className="text-sm text-muted-foreground">{milestone.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="space-y-4">
+              {milestones.map((milestone, index) => (
+                <div key={index} className="bg-card/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-border/50 hover:border-cta/30 transition-colors">
+                  <h4 className="font-bold text-foreground">{milestone.title}</h4>
+                  <p className="text-sm text-muted-foreground text-left">{milestone.description}</p>
+                </div>
+              ))}
             </div>
           </section>
 
