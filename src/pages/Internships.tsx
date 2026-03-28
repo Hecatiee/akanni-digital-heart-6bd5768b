@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import { Upload, ArrowLeft, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import InternShowcase from "@/components/InternShowcase";
 import { z } from "zod";
 
 // Input validation schema
