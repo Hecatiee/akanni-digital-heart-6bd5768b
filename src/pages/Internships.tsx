@@ -118,10 +118,8 @@ const Internships = () => {
 
       if (uploadError) throw uploadError;
 
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from("resumes")
-        .getPublicUrl(filePath);
+      // Store the file path as the resume reference (bucket is private, use signed URLs to access)
+      const resumePath = `resumes/${filePath}`;
 
       // Insert application to database with validated data
       const { error: insertError } = await supabase
@@ -133,7 +131,7 @@ const Internships = () => {
           domain: validatedData.domain,
           location: validatedData.location,
           is_freelancer: validatedData.isFreelancer,
-          resume_url: publicUrl,
+          resume_url: resumePath,
         });
 
       if (insertError) throw insertError;
