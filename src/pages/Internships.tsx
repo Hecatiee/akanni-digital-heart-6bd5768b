@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import { Upload, ArrowLeft, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import InternShowcase from "@/components/InternShowcase";
 import { z } from "zod";
 
 // Input validation schema
@@ -210,6 +211,8 @@ const Internships = () => {
               </div>
             </div>
           </div>
+
+          <InternShowcase />
 
           <form onSubmit={handleSubmit} className="bg-card rounded-2xl shadow-lg p-8 border border-border">
             <div className="space-y-6">
