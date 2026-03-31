@@ -365,7 +365,9 @@ const Internships = () => {
             </div>
           </form>
 
-          <InternShowcase />
+          <div className="mt-16">
+            <InternShowcase />
+          </div>
         </div>
       </div>
 
