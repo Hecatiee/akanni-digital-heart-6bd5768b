@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Leaf, BookOpen, Cloud, Newspaper, Trophy } from "lucide-react";
+import { Award, Leaf, BookOpen, Cloud, Newspaper, Trophy, Video } from "lucide-react";
 
 const projects = [
   {
@@ -31,23 +31,23 @@ const projects = [
     bgColor: "bg-accent/10",
   },
   {
-    title: "Kawlathe Konnection",
-    description: "Community & sustainability project with Nupur Risbood (TEDx speaker)",
+    title: "Kawalthe Konnections",
+    description: "Community & sustainability project with (TEDx speaker).",
     icon: Leaf,
     color: "text-secondary",
     bgColor: "bg-secondary/10",
   },
   {
     title: "Comic Bee",
-    description: "Edutainment & comic-book projects bringing learning to life",
+    description: "Reaching students across SSC, CBSE, and ICSE boards through academic and learning upgradation.",
     icon: BookOpen,
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
   {
-    title: "Katha Sudha",
-    description: "Cultural content collaboration bringing stories to life",
-    icon: BookOpen,
+    title: "Not just content. Champion content.",
+    description: "Behind every strong athlete is a stronger narrative. We handled the shoot + edits to bring that story to life.",
+    icon: Video,
     color: "text-secondary",
     bgColor: "bg-secondary/10",
   },

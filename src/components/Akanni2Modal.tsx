@@ -4,26 +4,12 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Heart, Target, Rocket, Users } from "lucide-react";
+import { Heart } from "lucide-react";
 
 interface Akanni2ModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
-
-const milestones = [
-  { year: "2023", title: "The Spark", description: "Identified the digital divide affecting underserved communities" },
-  { year: "2024", title: "Foundation", description: "Built partnerships with NGOs and community leaders" },
-  { year: "2025", title: "Launch", description: "Officially launched Àkanní 2.0 digital inclusion movement" },
-  { year: "2026", title: "Expansion", description: "Scaling to reach 100+ communities across India" },
-];
-
-const futureOutcomes = [
-  { icon: Users, title: "500+ Communities", description: "Empowering underserved communities with digital presence" },
-  { icon: Rocket, title: "Digital Independence", description: "Helping businesses become self-sufficient online" },
-  { icon: Heart, title: "Zero Cost Support", description: "Providing free digital services to those in need" },
-  { icon: Target, title: "Sustainable Impact", description: "Creating lasting change through digital literacy" },
-];
 
 const Akanni2Modal = ({ open, onOpenChange }: Akanni2ModalProps) => {
   return (
@@ -67,42 +53,6 @@ const Akanni2Modal = ({ open, onOpenChange }: Akanni2ModalProps) => {
               <p className="text-muted-foreground leading-relaxed text-sm sm:text-base italic">
                 Àkanní 2.0 exists because sometimes, a small moment in a crowded train can shape a purpose for life.
               </p>
-            </div>
-          </section>
-
-          {/* Journey Timeline */}
-          <section className="space-y-4">
-            <h3 className="text-xl font-bold flex items-center gap-2 text-secondary">
-              <Rocket className="w-5 h-5" />
-              Our Journey
-            </h3>
-            <div className="space-y-4">
-              {milestones.map((milestone, index) => (
-                <div key={index} className="bg-card/50 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-border/50 hover:border-cta/30 transition-colors">
-                  <h4 className="font-bold text-foreground">{milestone.title}</h4>
-                  <p className="text-sm text-muted-foreground text-left">{milestone.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Future Outcomes */}
-          <section className="space-y-4">
-            <h3 className="text-xl font-bold flex items-center gap-2 text-accent">
-              <Target className="w-5 h-5" />
-              Future Outcomes
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-              {futureOutcomes.map((outcome, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-card to-accent/5 rounded-xl p-4 border border-border/50 hover:border-accent/30 hover:scale-[1.02] transition-all duration-300"
-                >
-                  <outcome.icon className="w-8 h-8 text-accent mb-2" />
-                  <h4 className="font-bold text-foreground">{outcome.title}</h4>
-                  <p className="text-sm text-muted-foreground">{outcome.description}</p>
-                </div>
-              ))}
             </div>
           </section>
 

@@ -5,8 +5,9 @@ const topRow = [
 ];
 
 const bottomRow = [
-  { name: "Heartfullness", style: "font-serif italic" },
+  { name: "Heartfulness", style: "font-serif italic" },
   { name: "Bhakti Cure", style: "font-serif font-semibold" },
+  { name: "Avora", style: "font-serif font-semibold" },
 ];
 
 const TrustedBy = () => {

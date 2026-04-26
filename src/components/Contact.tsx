@@ -112,12 +112,20 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Phone</h3>
-                    <a 
-                      href="tel:+919004138118"
-                      className="text-muted-foreground hover:text-secondary transition-colors"
-                    >
-                      +91 90041 38118
-                    </a>
+                    <div className="flex flex-col">
+                      <a 
+                        href="tel:+919004138118"
+                        className="text-muted-foreground hover:text-secondary transition-colors"
+                      >
+                        +91 90041 38118
+                      </a>
+                      <a 
+                        href="tel:+918208125606"
+                        className="text-muted-foreground hover:text-secondary transition-colors"
+                      >
+                        +91 82081 25606
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
