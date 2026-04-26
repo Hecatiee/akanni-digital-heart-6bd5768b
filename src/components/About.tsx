@@ -1,10 +1,6 @@
-import { useState } from "react";
 import teamCircle from "@/assets/team-circle.png";
-import Akanni2Modal from "./Akanni2Modal";
-import { ChevronRight } from "lucide-react";
 
 const About = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section id="about" className="py-16 md:py-20 relative overflow-hidden">
       {/* Background blob */}
@@ -31,14 +27,8 @@ const About = () => {
             </div>
 
             <div className="space-y-8 text-lg leading-relaxed">
-              <div 
-                onClick={() => setIsModalOpen(true)}
-                className="bg-gradient-to-r from-cta/20 to-primary/20 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg border-2 border-cta/30 hover:scale-[1.02] md:hover:scale-105 transition-transform duration-300 cursor-pointer group"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-cta">Àkanní 2.0: Digital Inclusion Movement</h3>
-                  <ChevronRight className="w-6 h-6 text-cta group-hover:translate-x-1 transition-transform" />
-                </div>
+              <div className="bg-gradient-to-r from-cta/20 to-primary/20 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-lg border-2 border-cta/30">
+                <h3 className="text-xl md:text-2xl font-bold text-cta mb-4">Àkanní 2.0: Digital Inclusion Movement</h3>
                 <p className="mb-4 text-left">
                   Now we&apos;re launching <strong>Àkanní 2.0</strong>, a focused movement for digital inclusion. 
                   This phase is practical, not performative.
@@ -48,10 +38,7 @@ const About = () => {
                   social media, web profiles and e-commerce, without charging them. We want to hand them a stage 
                   so they can be visible, respected, and self-sufficient in the digital world.
                 </p>
-                <p className="text-sm text-cta mt-4 group-hover:underline">Click to learn more →</p>
               </div>
-
-              <Akanni2Modal open={isModalOpen} onOpenChange={setIsModalOpen} />
 
               <div className="text-center md:text-left py-8 animate-fade-in clear-right md:clear-none">
                 <p className="text-2xl font-bold text-foreground hover:scale-105 transition-transform duration-300 text-left">

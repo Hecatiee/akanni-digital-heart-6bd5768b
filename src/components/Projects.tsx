@@ -92,7 +92,8 @@ const Projects = () => {
                     <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
                       <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
                     </div>
-                    <CardTitle className="text-lg sm:text-xl font-bold">{project.title}</CardTitle>
+                    <p className="text-xs sm:text-sm font-semibold text-muted-foreground mb-1">{project.title}</p>
+                    <CardTitle className="text-lg sm:text-xl font-bold">{project.hook}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-sm sm:text-base leading-relaxed">
@@ -118,7 +119,8 @@ const Projects = () => {
                     <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
                       <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
                     </div>
-                    <CardTitle className="text-lg sm:text-xl font-bold">{project.title}</CardTitle>
+                    <p className="text-xs sm:text-sm font-semibold text-muted-foreground mb-1">{project.title}</p>
+                    <CardTitle className="text-lg sm:text-xl font-bold">{project.hook}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-sm sm:text-base leading-relaxed">
