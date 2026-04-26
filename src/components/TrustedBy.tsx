@@ -23,7 +23,8 @@ const TrustedBy = () => {
               {topRow.map((company, index) => (
                 <span
                   key={index}
-                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[hsl(0,0%,35%)] hover:text-[hsl(0,0%,20%)] transition-colors duration-300 ${company.style}`}
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                  className={`inline-block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[hsl(0,0%,35%)] hover:text-[hsl(0,0%,20%)] transition-all duration-300 hover:-translate-y-1 hover:scale-110 animate-float-soft ${company.style}`}
                 >
                   {company.name}
                 </span>
@@ -34,7 +35,8 @@ const TrustedBy = () => {
               {bottomRow.map((company, index) => (
                 <span
                   key={index}
-                  className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[hsl(0,0%,35%)] hover:text-[hsl(0,0%,20%)] transition-colors duration-300 ${company.style}`}
+                  style={{ animationDelay: `${(index + 3) * 0.2}s` }}
+                  className={`inline-block text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[hsl(0,0%,35%)] hover:text-[hsl(0,0%,20%)] transition-all duration-300 hover:-translate-y-1 hover:scale-110 animate-float-soft ${company.style}`}
                 >
                   {company.name}
                 </span>
