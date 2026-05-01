@@ -61,7 +61,15 @@ const projects = [
   },
 ];
 
-type Project = (typeof projects)[number] & { link?: string };
+type Project = {
+  title: string;
+  hook: string;
+  description: string;
+  icon: typeof Award;
+  color: string;
+  bgColor: string;
+  link?: string;
+};
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const Icon = project.icon;
