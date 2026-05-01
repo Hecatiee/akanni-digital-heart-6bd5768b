@@ -119,7 +119,7 @@ const services = [
     icon: Settings,
     color: "text-primary",
     bgColor: "bg-primary/10",
-    description: "Every business has unique needs — we customize accordingly.",
+    description: "Every business has unique needs, we customize accordingly.",
     points: [
       "Sector-based service curation",
       "Tailored workflow & management plans",
