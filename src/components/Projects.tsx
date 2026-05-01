@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Leaf, BookOpen, Cloud, Newspaper, Trophy, Video } from "lucide-react";
+import { Award, Leaf, BookOpen, Cloud, Newspaper, Trophy, Video, Instagram } from "lucide-react";
 
 const projects = [
   {
@@ -60,6 +60,42 @@ const projects = [
     link: "https://www.instagram.com/rajniraut230?igsh=MWp2bWFkaXE5bXFocA==",
   },
 ];
+
+type Project = (typeof projects)[number] & { link?: string };
+
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const Icon = project.icon;
+  return (
+    <Card
+      className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-3xl overflow-hidden animate-fade-in float-animation flex flex-col"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <CardHeader>
+        <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
+          <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
+        </div>
+        <p className="text-xs sm:text-sm font-semibold text-muted-foreground mb-1 text-left">{project.title}</p>
+        <CardTitle className="text-lg sm:text-xl font-bold text-left">{project.hook}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex-1 flex flex-col">
+        <CardDescription className="text-sm sm:text-base leading-relaxed text-justify hyphens-auto">
+          {project.description}
+        </CardDescription>
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors self-start"
+          >
+            <Instagram className="w-4 h-4" />
+            View on Instagram
+          </a>
+        )}
+      </CardContent>
+    </Card>
+  );
+};
 
 const Projects = () => {
   return (
