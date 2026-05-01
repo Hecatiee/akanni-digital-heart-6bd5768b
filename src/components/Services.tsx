@@ -119,7 +119,7 @@ const services = [
     icon: Settings,
     color: "text-primary",
     bgColor: "bg-primary/10",
-    description: "Every business has unique needs — we customize accordingly.",
+    description: "Every business has unique needs, we customize accordingly.",
     points: [
       "Sector-based service curation",
       "Tailored workflow & management plans",
@@ -158,7 +158,7 @@ const ServiceCardContent = ({ service }: { service: typeof services[0] }) => {
         <h4 className="font-bold text-base leading-tight bg-gradient-to-r from-primary to-cta bg-clip-text text-transparent">{service.title}</h4>
       </div>
       <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-      <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
+      <p className="text-sm text-muted-foreground leading-relaxed text-justify hyphens-auto">{service.description}</p>
       <div className="space-y-2 bg-muted/30 backdrop-blur-sm rounded-lg p-3 border border-primary/10">
         <p className="text-xs font-semibold text-primary uppercase tracking-wide">What we do:</p>
         <ul className="space-y-1.5">
