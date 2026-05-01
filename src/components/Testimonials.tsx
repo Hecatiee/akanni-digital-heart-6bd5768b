@@ -56,27 +56,28 @@ const Testimonials = () => {
         </div>
 
         <Carousel 
-          className="w-full max-w-3xl mx-auto"
+          className="w-full max-w-3xl mx-auto px-8 sm:px-12"
           opts={{
             align: "start",
             loop: true,
           }}
           plugins={[
             Autoplay({
-              delay: 3000,
-              stopOnInteraction: false,
+              delay: 5000,
+              stopOnInteraction: true,
             }),
           ]}
         >
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <div className="bg-card rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in float-animation border-2 border-primary/10">
+                <div className="bg-card rounded-3xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in border-2 border-primary/10">
                   <div className="flex flex-col items-center">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.alt}
-                      className="w-full max-w-xl rounded-2xl shadow-md mb-4"
+                      className="w-full max-w-xl h-auto rounded-2xl shadow-md mb-4 object-contain"
+                      loading="lazy"
                     />
                     <div className="text-center">
                       <h3 className="text-xl font-heading font-bold text-foreground mb-2">
@@ -100,8 +101,8 @@ const Testimonials = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="left-0 sm:-left-4" />
+          <CarouselNext className="right-0 sm:-right-4" />
         </Carousel>
 
         {/* Decorative elements */}

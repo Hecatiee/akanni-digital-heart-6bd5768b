@@ -131,7 +131,7 @@ const Contact = () => {
               </div>
 
               <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 border-2 border-accent/30 hover:scale-105 transition-transform duration-300 float-animation" style={{ animationDelay: '1s' }}>
-                <p className="text-lg leading-relaxed">
+                <p className="text-base sm:text-lg leading-relaxed text-justify hyphens-auto">
                   <strong className="text-accent">New to Àkanní?</strong> We&apos;d love to hear about your project. 
                   Whether it&apos;s a brand refresh, a new website, or a social impact initiative, 
                   let&apos;s make it happen together!
