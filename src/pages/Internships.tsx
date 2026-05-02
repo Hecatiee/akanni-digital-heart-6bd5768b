@@ -73,6 +73,8 @@ const Internships = () => {
     "Machine Learning",
     "Cybersecurity",
     "Business Development",
+    "Event Management",
+    "Model Training",
   ];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
