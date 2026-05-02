@@ -1,5 +1,10 @@
 import internAnurag from "@/assets/intern-anurag.png";
 import internAtharva from "@/assets/intern-atharva.png";
+import internTrupti from "@/assets/intern-trupti.png";
+import internRiddhi from "@/assets/intern-riddhi.png";
+import internMrunali from "@/assets/intern-mrunali.png";
+import internNirmiti from "@/assets/intern-nirmiti.png";
+import { Quote } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -24,42 +29,90 @@ const interns = [
     role: "Web Developer",
     batch: "Letter of Appreciation",
   },
+  {
+    image: internTrupti,
+    alt: "Trupti Patil - Web Developer, Letter of Appreciation",
+    name: "Trupti Patil",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Garaware College, Pune",
+  },
+  {
+    image: internRiddhi,
+    alt: "Riddhi Junawane - Data Analyst, Letter of Recommendation",
+    name: "Riddhi Junawane",
+    role: "Data Analyst",
+    batch: "Letter of Recommendation, MIT WPU, Pune",
+  },
+  {
+    image: internMrunali,
+    alt: "Mrunali Pawar - Data Analyst, Letter of Appreciation",
+    name: "Mrunali Pawar",
+    role: "Data Analyst",
+    batch: "Letter of Appreciation, MIT WPU, Pune",
+  },
+  {
+    image: internNirmiti,
+    alt: "Nirmiti Parkar - Designer, Letter of Appreciation",
+    name: "Nirmiti Parkar",
+    role: "Designer",
+    batch: "Letter of Appreciation, MIT WPU, Pune",
+  },
 ];
 
 const InternShowcase = () => {
   return (
-    <section className="mb-12">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-2 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-        Our Interns
-      </h2>
-      <p className="text-muted-foreground text-center mb-6 text-sm">
-        Meet the talented individuals who have been part of our journey
-      </p>
+    <section className="relative py-16 md:py-20 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-background to-secondary/20 rounded-3xl">
+      {/* Background blobs */}
+      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl blob-animation" />
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl blob-animation-delayed" />
 
-      <Carousel
-        opts={{ align: "center", loop: true }}
-        plugins={[Autoplay({ delay: 3500, stopOnInteraction: false })]}
-        className="w-full max-w-md mx-auto"
-      >
-        <CarouselContent>
-          {interns.map((intern, index) => (
-            <CarouselItem key={index}>
-              <div className="p-2">
-                <div className="rounded-xl overflow-hidden border border-border shadow-lg">
-                  <img
-                    src={intern.image}
-                    alt={intern.alt}
-                    className="w-full h-auto object-cover"
-                    loading="lazy"
-                  />
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center mb-8 md:mb-12 animate-fade-in">
+          <Quote className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-primary float-animation" />
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            Our Interns
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground text-center">
+            Meet the talented individuals who have been part of our journey
+          </p>
+        </div>
+
+        <Carousel
+          className="w-full max-w-3xl mx-auto px-8 sm:px-12"
+          opts={{ align: "start", loop: true }}
+          plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
+        >
+          <CarouselContent>
+            {interns.map((intern, index) => (
+              <CarouselItem key={index}>
+                <div className="bg-card rounded-3xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in border-2 border-primary/10">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src={intern.image}
+                      alt={intern.alt}
+                      className="w-full max-w-xl h-auto rounded-2xl shadow-md mb-4 object-contain"
+                      loading="lazy"
+                    />
+                    <div className="text-center">
+                      <h3 className="text-xl font-heading font-bold text-foreground mb-2">
+                        {intern.name}
+                      </h3>
+                      <p className="text-muted-foreground italic text-sm mb-1">
+                        {intern.role}
+                      </p>
+                      <p className="text-muted-foreground text-xs">
+                        {intern.batch}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex -left-4" />
-        <CarouselNext className="hidden sm:flex -right-4" />
-      </Carousel>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-0 sm:-left-4" />
+          <CarouselNext className="right-0 sm:-right-4" />
+        </Carousel>
+      </div>
     </section>
   );
 };
