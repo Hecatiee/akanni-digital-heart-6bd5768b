@@ -1,8 +1,10 @@
 import { Quote } from "lucide-react";
-import boiTestimonial from "@/assets/boi-testimonial.png";
-import comicBeeTestimonial from "@/assets/comic-bee-testimonial.png";
-import nupurTestimonial from "@/assets/nupur-testimonial.png";
-import manishaTestimonial from "@/assets/manisha-testimonial.png";
+import boiTestimonial from "@/assets/testimonial-boi.jpeg";
+import comicBeeTestimonial from "@/assets/testimonial-comicbee.jpeg";
+import kawaltheTestimonial from "@/assets/testimonial-kawalthe.jpeg";
+import dreamsvinTestimonial from "@/assets/testimonial-dreamsvin.jpeg";
+import kathaSudhaTestimonial from "@/assets/testimonial-kathasudha.jpeg";
+import rajniTestimonial from "@/assets/testimonial-rajni.jpeg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -17,24 +19,38 @@ const Testimonials = () => {
     },
     {
       image: comicBeeTestimonial,
-      alt: "Santosh Pisharody - Comic Book Designing Testimonial",
-      title: "Santosh Pisharody",
-      description: "Comic Book (Designing)",
+      alt: "Tr. Santosh Pisharody - Comic Book Designing Testimonial",
+      title: "Tr. Santosh Pisharody",
+      description: "Comic Book Designing",
       link: "https://www.instagram.com/spisharody7/"
     },
     {
-      image: nupurTestimonial,
+      image: kawaltheTestimonial,
       alt: "Nupur Risbood - Kawalthe Konnections Testimonial",
       title: "Nupur Risbood",
       description: "Kawalthe Konnections",
-      link: "https://www.instagram.com/_kawalthe_konnection_/"
+      link: "https://www.instagram.com/_kawalthe_konnection_?igsh=MTV0bGQ2bGg2cTVvNw=="
     },
     {
-      image: manishaTestimonial,
-      alt: "Mrs. Manisha Athavle - Katha Sudha Testimonial",
-      title: "Mrs. Manisha Athavle",
+      image: dreamsvinTestimonial,
+      alt: "Isha Ostwal - DreamSVin Consultancy Testimonial",
+      title: "Isha Ostwal",
+      description: "DreamSVin Consultancy",
+      link: "https://www.instagram.com/dreamsvin.in?igsh=MXAxbzF0bHBkNjJlaA=="
+    },
+    {
+      image: kathaSudhaTestimonial,
+      alt: "Manisha Athavle - Katha Sudha Testimonial",
+      title: "Manisha Athavle",
       description: "Katha Sudha",
       link: "https://www.youtube.com/@Katha.Sudha_2025"
+    },
+    {
+      image: rajniTestimonial,
+      alt: "Rajni Raut - Social Media Management & Editing Testimonial",
+      title: "Rajni Raut",
+      description: "Social Media Management & Editing",
+      link: "https://www.instagram.com/rajniraut230?igsh=angxYnljODZldGVp"
     }
   ];
 
