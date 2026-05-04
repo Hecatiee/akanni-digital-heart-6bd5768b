@@ -5,6 +5,7 @@ import kawaltheTestimonial from "@/assets/testimonial-kawalthe.jpeg";
 import dreamsvinTestimonial from "@/assets/testimonial-dreamsvin.jpeg";
 import kathaSudhaTestimonial from "@/assets/testimonial-kathasudha.jpeg";
 import rajniTestimonial from "@/assets/testimonial-rajni.jpeg";
+import avoraTestimonial from "@/assets/testimonial-avora.jpeg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -44,6 +45,13 @@ const Testimonials = () => {
       title: "Manisha Athavle",
       description: "Katha Sudha",
       link: "https://www.youtube.com/@Katha.Sudha_2025"
+    },
+    {
+      image: avoraTestimonial,
+      alt: "Varun Gosavi - Avora & Crazy Hedz Testimonial",
+      title: "Varun Gosavi",
+      description: "Avora & Crazy Hedz",
+      link: "https://www.instagram.com/avora_experiences?igsh=MXZ4YXF1Y2J4MmNpOQ=="
     },
     {
       image: rajniTestimonial,
