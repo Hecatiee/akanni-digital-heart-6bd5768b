@@ -87,7 +87,7 @@ const Testimonials = () => {
           }}
           plugins={[
             Autoplay({
-              delay: 5000,
+              delay: 3000,
               stopOnInteraction: false,
               stopOnMouseEnter: true,
             }),
@@ -102,9 +102,8 @@ const Testimonials = () => {
                       src={testimonial.image} 
                       alt={testimonial.alt}
                       className="w-full max-w-xl h-auto rounded-2xl shadow-md mb-4 object-contain"
-                      loading={index === 0 ? "eager" : "lazy"}
+                      loading="eager"
                       decoding="async"
-                      fetchPriority={index === 0 ? "high" : "auto"}
                     />
                     <div className="text-center">
                       <h3 className="text-xl font-heading font-bold text-foreground mb-2">
