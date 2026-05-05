@@ -90,7 +90,6 @@ const Testimonials = () => {
               delay: 5000,
               stopOnInteraction: false,
               stopOnMouseEnter: true,
-know: true,
             }),
           ]}
         >
