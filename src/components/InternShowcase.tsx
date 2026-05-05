@@ -80,7 +80,7 @@ const InternShowcase = () => {
         <Carousel
           className="w-full max-w-3xl mx-auto px-8 sm:px-12"
           opts={{ align: "start", loop: true }}
-          plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+          plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]}
         >
           <CarouselContent>
             {interns.map((intern, index) => (
@@ -91,9 +91,8 @@ const InternShowcase = () => {
                       src={intern.image}
                       alt={intern.alt}
                       className="w-full max-w-xl h-auto rounded-2xl shadow-md mb-4 object-contain"
-                      loading={index === 0 ? "eager" : "lazy"}
+                      loading="eager"
                       decoding="async"
-                      fetchPriority={index === 0 ? "high" : "auto"}
                     />
                     <div className="text-center">
                       <h3 className="text-xl font-heading font-bold text-foreground mb-2">
