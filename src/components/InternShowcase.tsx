@@ -4,6 +4,10 @@ import internTrupti from "@/assets/intern-trupti.png";
 import internRiddhi from "@/assets/intern-riddhi.png";
 import internMrunali from "@/assets/intern-mrunali.png";
 import internNirmiti from "@/assets/intern-nirmiti.png";
+import internAditya from "@/assets/intern-aditya.jpeg";
+import internRishi from "@/assets/intern-rishi.jpeg";
+import internPushkar from "@/assets/intern-pushkar.jpeg";
+import internAditi from "@/assets/intern-aditi.jpeg";
 import { Quote } from "lucide-react";
 import {
   Carousel,
@@ -56,6 +60,34 @@ const interns = [
     name: "Nirmiti Parkar",
     role: "Designer",
     batch: "Letter of Appreciation, MIT WPU, Pune",
+  },
+  {
+    image: internAditya,
+    alt: "Aditya Khude - Data Analyst, Letter of Appreciation",
+    name: "Aditya Khude",
+    role: "Data Analyst",
+    batch: "Letter of Appreciation, MIT WPU, Pune",
+  },
+  {
+    image: internRishi,
+    alt: "Rishi Mandot - Data Analyst, Letter of Appreciation",
+    name: "Rishi Mandot",
+    role: "Data Analyst",
+    batch: "Letter of Appreciation, MIT WPU, Pune",
+  },
+  {
+    image: internPushkar,
+    alt: "Pushkar Khaire - Data Analyst, Letter of Appreciation",
+    name: "Pushkar Khaire",
+    role: "Data Analyst",
+    batch: "Letter of Appreciation, MIT WPU, Pune",
+  },
+  {
+    image: internAditi,
+    alt: "Aditi Joshi - Data Analyst, Letter of Recommendation",
+    name: "Aditi Joshi",
+    role: "Data Analyst",
+    batch: "Letter of Recommendation, MIT WPU, Pune",
   },
 ];
 
