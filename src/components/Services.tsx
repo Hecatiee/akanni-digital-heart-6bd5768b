@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Share2, Monitor, BarChart3, Calendar, Smartphone, Palette, Users, Package, Settings, Search } from "lucide-react";
+import { Share2, Monitor, BarChart3, Calendar, Smartphone, Palette, Users, Package, Settings, Search, ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
@@ -170,6 +170,13 @@ const ServiceCardContent = ({ service }: { service: typeof services[0] }) => {
           ))}
         </ul>
       </div>
+      <a
+        href="#contact"
+        className="inline-flex items-center gap-1.5 text-xs font-semibold text-cta hover:text-cta/80 transition-colors mt-1"
+      >
+        Let&apos;s connect
+        <ArrowRight className="w-3.5 h-3.5" />
+      </a>
     </div>
   );
 };

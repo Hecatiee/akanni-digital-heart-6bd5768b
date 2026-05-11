@@ -1,5 +1,3 @@
-import { Heart } from "lucide-react";
-
 const Footer = () => {
   return (
     <footer className="bg-muted/30 py-8 relative overflow-hidden">
@@ -15,12 +13,6 @@ const Footer = () => {
           <p className="text-muted-foreground max-w-md mx-auto">
             One roof. All digital. Real impact.
           </p>
-
-          <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 text-cta fill-cta" />
-            <span>by Àkanní</span>
-          </div>
 
           <div className="pt-4 border-t border-border/50 text-sm text-muted-foreground">
             <p>© {new Date().getFullYear()} Àkanní. All rights reserved.</p>
