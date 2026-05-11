@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from "react";
 import { Award, Leaf, BookOpen, Cloud, Newspaper, Trophy, Video, Instagram } from "lucide-react";
 
 const projects = [
@@ -73,35 +73,53 @@ type Project = {
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const Icon = project.icon;
+  const [flipped, setFlipped] = useState(false);
   return (
-    <Card
-      className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-3xl overflow-hidden animate-fade-in float-animation flex flex-col"
+    <div
+      className="group [perspective:1200px] animate-fade-in float-animation min-h-[260px] sm:min-h-[280px]"
       style={{ animationDelay: `${index * 0.1}s` }}
+      onClick={() => setFlipped((f) => !f)}
     >
-      <CardHeader>
-        <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
-          <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
+      <div
+        className={`relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] ${
+          flipped ? "[transform:rotateY(180deg)]" : ""
+        } md:group-hover:[transform:rotateY(180deg)]`}
+      >
+        {/* Front */}
+        <div className="absolute inset-0 [backface-visibility:hidden] rounded-3xl border-2 border-border bg-card p-5 sm:p-6 shadow-md flex flex-col">
+          <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
+            <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
+          </div>
+          <p className="text-sm sm:text-base font-bold text-foreground mb-2 text-left">{project.title}</p>
+          <h3 className="text-base sm:text-lg font-heading font-semibold text-primary text-left leading-snug">
+            {project.hook}
+          </h3>
+          <p className="mt-auto pt-4 text-[11px] uppercase tracking-wider text-muted-foreground/70">
+            Tap to flip
+          </p>
         </div>
-        <p className="text-xs sm:text-sm font-semibold text-muted-foreground mb-1 text-left">{project.title}</p>
-        <CardTitle className="text-lg sm:text-xl font-bold text-left">{project.hook}</CardTitle>
-      </CardHeader>
-      <CardContent className="flex-1 flex flex-col">
-        <CardDescription className="text-sm sm:text-base leading-relaxed text-justify hyphens-auto">
-          {project.description}
-        </CardDescription>
-        {project.link && (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors self-start"
-          >
-            <Instagram className="w-4 h-4" />
-            View on Instagram
-          </a>
-        )}
-      </CardContent>
-    </Card>
+
+        {/* Back */}
+        <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] rounded-3xl border-2 border-primary/50 bg-gradient-to-br from-primary/10 via-card to-accent/10 p-5 sm:p-6 shadow-xl flex flex-col">
+          <p className="text-xs sm:text-sm font-semibold text-primary mb-2 text-left">{project.title}</p>
+          <p className="text-sm sm:text-base leading-relaxed text-foreground/90 text-left">
+            {project.description}
+          </p>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="mt-auto pt-4 inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors self-start"
+            >
+              <Instagram className="w-4 h-4" />
+              View on Instagram
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -125,18 +143,16 @@ const Projects = () => {
         <div className="max-w-6xl mx-auto space-y-4">
           {/* First row - 4 cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {projects.slice(0, 4).map((project, index) => {
-              const Icon = project.icon;
-              return <ProjectCard key={index} project={project} index={index} />;
-            })}
+            {projects.slice(0, 4).map((project, index) => (
+              <ProjectCard key={index} project={project} index={index} />
+            ))}
           </div>
 
           {/* Second row - 3 cards offset */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:px-[12.5%]">
-            {projects.slice(4, 7).map((project, index) => {
-              const Icon = project.icon;
-              return <ProjectCard key={index + 4} project={project} index={index + 4} />;
-            })}
+            {projects.slice(4, 7).map((project, index) => (
+              <ProjectCard key={index + 4} project={project} index={index + 4} />
+            ))}
           </div>
         </div>
       </div>
