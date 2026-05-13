@@ -8,6 +8,7 @@ import internAditya from "@/assets/intern-aditya.jpeg";
 import internRishi from "@/assets/intern-rishi.jpeg";
 import internPushkar from "@/assets/intern-pushkar.jpeg";
 import internAditi from "@/assets/intern-aditi.jpeg";
+import internOmkar from "@/assets/intern-omkar.jpeg";
 import { Quote } from "lucide-react";
 import {
   Carousel,
@@ -88,6 +89,13 @@ const interns = [
     name: "Aditi Joshi",
     role: "Data Analyst",
     batch: "Letter of Recommendation, MIT WPU, Pune",
+  },
+  {
+    image: internOmkar,
+    alt: "Omkar Bhoite - Web Developer, Letter of Appreciation",
+    name: "Omkar Bhoite",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, MIT WPU, Pune",
   },
 ];
 
