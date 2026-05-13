@@ -69,60 +69,49 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-20 left-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cta/10 rounded-full blur-3xl -z-10" />
-      
+    <section id="contact" className="py-24 md:py-36 relative overflow-hidden border-t border-border/40">
+      <div className="absolute top-20 left-10 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
+      <div className="absolute bottom-20 right-10 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
+
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8 md:mb-12 animate-fade-in">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Let's <span className="text-primary">Connect</span>
+          <div className="text-center mb-16 animate-fade-in space-y-4">
+            <p className="eyebrow">Chapter V</p>
+            <h2 className="font-display text-5xl md:text-7xl text-foreground">
+              Let&apos;s <span className="italic text-primary text-glow">connect</span>
             </h2>
-            <p className="text-lg sm:text-xl text-muted-foreground text-center">
-              Ready to build something amazing together? Drop us a message!
-            </p>
+            <p className="text-base text-muted-foreground">A note, an idea, a hello. Send it over.</p>
+            <div className="hairline w-32 mx-auto" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact info */}
             <div className="space-y-6">
-              <div className="bg-card rounded-3xl p-8 border-2 border-primary/20 shadow-lg hover:scale-105 transition-transform duration-300 float-animation">
+              <div className="bg-card/40 backdrop-blur-sm p-8 border border-border/60 hover:border-primary/40 transition-colors">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg">Email</h3>
-                    <a 
-                      href="mailto:team.akanni@gmail.com"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
+                    <p className="eyebrow mb-1">Email</p>
+                    <a href="mailto:team.akanni@gmail.com" className="text-foreground/80 hover:text-primary transition-colors">
                       team.akanni@gmail.com
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-card rounded-3xl p-8 border-2 border-secondary/20 shadow-lg hover:scale-105 transition-transform duration-300 float-animation" style={{ animationDelay: '0.5s' }}>
+              <div className="bg-card/40 backdrop-blur-sm p-8 border border-border/60 hover:border-primary/40 transition-colors">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-secondary/10 border border-secondary/30 flex items-center justify-center">
                     <Phone className="w-6 h-6 text-secondary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg">Phone</h3>
+                    <p className="eyebrow mb-1">Phone</p>
                     <div className="flex flex-col">
-                      <a 
-                        href="tel:+919004138118"
-                        className="text-muted-foreground hover:text-secondary transition-colors"
-                      >
+                      <a href="tel:+919004138118" className="text-foreground/80 hover:text-primary transition-colors">
                         +91 90041 38118
                       </a>
-                      <a 
-                        href="tel:+918208125606"
-                        className="text-muted-foreground hover:text-secondary transition-colors"
-                      >
+                      <a href="tel:+918208125606" className="text-foreground/80 hover:text-primary transition-colors">
                         +91 82081 25606
                       </a>
                     </div>
@@ -130,17 +119,16 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl p-8 border-2 border-accent/30 hover:scale-105 transition-transform duration-300 float-animation" style={{ animationDelay: '1s' }}>
-                <p className="text-base sm:text-lg leading-relaxed text-justify hyphens-auto">
-                  <strong className="text-accent">New to Àkanní?</strong> We&apos;d love to hear about your project. 
+              <div className="bg-card/40 backdrop-blur-sm p-8 border border-accent/30">
+                <p className="font-display text-xl italic text-foreground leading-relaxed">
+                  <span className="text-accent">New to Àkanní?</span> We&apos;d love to hear about your project. 
                   Whether it&apos;s a brand refresh, a new website, or a social impact initiative, 
-                  let&apos;s make it happen together!
+                  let&apos;s make it together.
                 </p>
               </div>
             </div>
 
-            {/* Contact form */}
-            <form onSubmit={handleSubmit} className="bg-card rounded-3xl p-8 border-2 border-cta/20 shadow-lg hover:scale-105 transition-transform duration-300 animate-fade-in">
+            <form onSubmit={handleSubmit} className="bg-card/40 backdrop-blur-sm p-8 border border-border/60 animate-fade-in">
               <div className="space-y-4">
                 <div>
                   <Input
@@ -149,7 +137,7 @@ const Contact = () => {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-2xl border-2 focus:border-primary"
+                    className="rounded-none border-0 border-b border-border bg-transparent focus-visible:ring-0 focus:border-primary px-0"
                     aria-label="Your name"
                   />
                   {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
@@ -162,7 +150,7 @@ const Contact = () => {
                     placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="rounded-2xl border-2 focus:border-primary"
+                    className="rounded-none border-0 border-b border-border bg-transparent focus-visible:ring-0 focus:border-primary px-0"
                     aria-label="Your email"
                   />
                   {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
@@ -175,7 +163,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="rounded-2xl border-2 focus:border-primary resize-none"
+                    className="rounded-none border border-border bg-transparent focus-visible:ring-0 focus:border-primary resize-none"
                     aria-label="Your message"
                   />
                   {errors.message && <p className="text-destructive text-sm mt-1">{errors.message}</p>}
@@ -183,11 +171,11 @@ const Contact = () => {
 
                 <Button 
                   type="submit"
-                  className="w-full bg-cta hover:bg-cta/90 text-cta-foreground font-heading text-lg rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-105"
+                  className="w-full bg-foreground text-background hover:bg-primary hover:text-primary-foreground font-body text-xs uppercase tracking-[0.25em] rounded-none py-6 transition-all duration-500"
                   size="lg"
                 >
-                  Send Message
-                  <Send className="ml-2 h-5 w-5" />
+                  Send message
+                  <Send className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </form>
