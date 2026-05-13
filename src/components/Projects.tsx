@@ -86,23 +86,21 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
         } md:group-hover:[transform:rotateY(180deg)]`}
       >
         {/* Front */}
-        <div className="absolute inset-0 [backface-visibility:hidden] rounded-3xl border-2 border-border bg-card p-5 sm:p-6 shadow-md flex flex-col">
-          <div className={`w-12 h-12 sm:w-16 sm:h-16 ${project.bgColor} rounded-2xl flex items-center justify-center mb-4`}>
-            <Icon className={`w-6 h-6 sm:w-8 sm:h-8 ${project.color}`} />
+        <div className="absolute inset-0 [backface-visibility:hidden] border border-border/60 bg-card/40 backdrop-blur-sm p-6 flex flex-col hover:border-primary/40 transition-colors">
+          <div className={`w-12 h-12 ${project.bgColor} border border-border/60 flex items-center justify-center mb-6`}>
+            <Icon className={`w-5 h-5 ${project.color}`} />
           </div>
-          <p className="text-sm sm:text-base font-bold text-foreground mb-2 text-left">{project.title}</p>
-          <h3 className="text-base sm:text-lg font-heading font-semibold text-primary text-left leading-snug">
+          <p className="eyebrow mb-3 text-foreground/60">{project.title}</p>
+          <h3 className="font-display text-2xl text-foreground italic leading-tight">
             {project.hook}
           </h3>
-          <p className="mt-auto pt-4 text-[11px] uppercase tracking-wider text-muted-foreground/70">
-            Tap to flip
-          </p>
+          <p className="mt-auto pt-6 eyebrow text-[9px]">tap to flip</p>
         </div>
 
         {/* Back */}
-        <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] rounded-3xl border-2 border-primary/50 bg-gradient-to-br from-primary/10 via-card to-accent/10 p-5 sm:p-6 shadow-xl flex flex-col">
-          <p className="text-xs sm:text-sm font-semibold text-primary mb-2 text-left">{project.title}</p>
-          <p className="text-sm sm:text-base leading-relaxed text-foreground/90 text-left">
+        <div className="absolute inset-0 [transform:rotateY(180deg)] [backface-visibility:hidden] border border-primary/40 bg-card/60 backdrop-blur-sm p-6 flex flex-col" style={{ boxShadow: "var(--shadow-glow)" }}>
+          <p className="eyebrow mb-3 text-primary">{project.title}</p>
+          <p className="text-sm leading-relaxed text-foreground/85">
             {project.description}
           </p>
           {project.link && (
@@ -111,10 +109,10 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="mt-auto pt-4 inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors self-start"
+              className="mt-auto pt-6 inline-flex items-center gap-2 text-primary hover:text-primary/80 text-xs uppercase tracking-[0.25em] transition-colors self-start"
             >
               <Instagram className="w-4 h-4" />
-              View on Instagram
+              View
             </a>
           )}
         </div>
@@ -125,19 +123,20 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
 const Projects = () => {
   return (
-    <section className="py-16 md:py-20 relative overflow-hidden">
-      {/* Background blobs */}
-      <div className="absolute top-0 left-0 w-60 md:w-80 h-60 md:h-80 bg-secondary/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 right-0 w-72 md:w-96 h-72 md:h-96 bg-accent/10 rounded-full blur-3xl -z-10" />
-      
+    <section className="py-24 md:py-36 relative overflow-hidden border-t border-border/40">
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
+
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="text-primary">Highlights</span>
+        <div className="text-center mb-16 animate-fade-in space-y-4">
+          <p className="eyebrow">Chapter III</p>
+          <h2 className="font-display text-5xl md:text-7xl text-foreground">
+            Our <span className="italic text-primary text-glow">highlights</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-center">
-            From national projects to community impact, here&apos;s what we&apos;ve been building
+          <p className="text-base text-muted-foreground max-w-xl mx-auto">
+            From national stages to quiet community work. Hover or tap to read.
           </p>
+          <div className="hairline w-32 mx-auto" />
         </div>
 
         <div className="max-w-6xl mx-auto space-y-4">
