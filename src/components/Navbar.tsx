@@ -47,15 +47,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-lg border-b border-border shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/60 backdrop-blur-xl border-b border-border/40">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <img src={logo} alt="Àkanní Logo" className="h-14 w-auto" />
+            <img src={logo} alt="Àkanní Logo" className="h-10 w-auto opacity-90" />
+            <span className="hidden sm:inline font-display text-2xl text-foreground tracking-wide">Àkanní</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -70,7 +71,7 @@ const Navbar = () => {
                       ? scrollToSection(link.id!) 
                       : handleNavigation(link.path!)
                   }
-                  className="text-foreground hover:text-primary transition-colors font-medium text-lg"
+                  className="text-foreground/80 hover:text-primary transition-colors font-body text-xs uppercase tracking-[0.25em]"
                 >
                   {link.name}
                 </button>
@@ -78,7 +79,7 @@ const Navbar = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 border-l border-border pl-8">
+            <div className="flex items-center gap-4 border-l border-border/40 pl-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -88,16 +89,16 @@ const Navbar = () => {
                   aria-label={social.label}
                   className={`text-muted-foreground ${social.color} transition-colors`}
                 >
-                  <social.icon className="h-6 w-6" />
+                  <social.icon className="h-5 w-5" />
                 </a>
               ))}
               <Button
                 onClick={() => scrollToSection("contact")}
                 variant="outline"
                 size="default"
-                className="ml-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full"
+                className="ml-2 border border-foreground/30 bg-transparent text-foreground hover:bg-foreground hover:text-background rounded-none font-body text-xs uppercase tracking-[0.2em]"
               >
-                <Mail className="h-5 w-5 mr-2" />
+                <Mail className="h-4 w-4 mr-2" />
                 Contact
               </Button>
             </div>
