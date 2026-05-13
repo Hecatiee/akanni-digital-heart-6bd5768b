@@ -174,17 +174,19 @@ const Internships = () => {
             Back to Home
           </Button>
 
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              Find Your Internship
+          <div className="text-center mb-12 space-y-4">
+            <p className="eyebrow">Apply</p>
+            <h1 className="font-display text-5xl md:text-7xl text-foreground">
+              Find your <span className="italic text-primary text-glow">internship</span>
             </h1>
-            <p className="text-muted-foreground text-lg">
-              Join our team and kickstart your career
+            <p className="text-muted-foreground text-base">
+              Join our team and begin a chapter of your own.
             </p>
+            <div className="hairline w-32 mx-auto" />
           </div>
 
           {/* Contact Info Section */}
-          <div className="mb-12 bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 rounded-2xl p-6 border border-border">
+          <div className="mb-12 bg-card/40 backdrop-blur-sm p-6 border border-border/60">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary" />

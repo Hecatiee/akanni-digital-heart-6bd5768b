@@ -101,20 +101,19 @@ const interns = [
 
 const InternShowcase = () => {
   return (
-    <section className="relative py-16 md:py-20 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-background to-secondary/20 rounded-3xl">
-      {/* Background blobs */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl blob-animation" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl blob-animation-delayed" />
+    <section className="relative py-16 md:py-20 px-4 sm:px-6 overflow-hidden border-t border-border/40">
+      <div className="absolute top-20 left-10 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
+      <div className="absolute bottom-20 right-10 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-8 md:mb-12 animate-fade-in">
-          <Quote className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-primary float-animation" />
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
-            Our Interns
+        <div className="text-center mb-12 animate-fade-in space-y-4">
+          <Quote className="w-8 h-8 mx-auto text-primary/70" />
+          <p className="eyebrow">Alumni</p>
+          <h2 className="font-display text-4xl md:text-6xl text-foreground">
+            Our <span className="italic text-primary text-glow">interns</span>
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground text-center">
-            Meet the talented individuals who have been part of our journey
-          </p>
+          <p className="text-muted-foreground text-sm">Talented people who have walked with us.</p>
+          <div className="hairline w-32 mx-auto" />
         </div>
 
         <Carousel
@@ -125,23 +124,23 @@ const InternShowcase = () => {
           <CarouselContent>
             {interns.map((intern, index) => (
               <CarouselItem key={index}>
-                <div className="bg-card rounded-3xl p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in border-2 border-primary/10">
+                <div className="bg-card/50 backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 animate-fade-in border border-border/60 hover:border-primary/40">
                   <div className="flex flex-col items-center">
                     <img
                       src={intern.image}
                       alt={intern.alt}
-                      className="w-full max-w-xl h-auto rounded-2xl shadow-md mb-4 object-contain"
+                      className="w-full max-w-xl h-auto mb-6 object-contain border border-border/40"
                       loading="eager"
                       decoding="async"
                     />
                     <div className="text-center">
-                      <h3 className="text-xl font-heading font-bold text-foreground mb-2">
+                      <h3 className="font-display text-2xl text-foreground italic mb-2">
                         {intern.name}
                       </h3>
-                      <p className="text-muted-foreground italic text-sm mb-1">
+                      <p className="text-muted-foreground text-sm mb-1">
                         {intern.role}
                       </p>
-                      <p className="text-muted-foreground text-xs">
+                      <p className="eyebrow">
                         {intern.batch}
                       </p>
                     </div>
