@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Quicksand', 'sans-serif'],
+        heading: ['Fraunces', 'Instrument Serif', 'serif'],
+        display: ['Instrument Serif', 'Fraunces', 'serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {
