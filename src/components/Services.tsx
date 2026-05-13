@@ -235,19 +235,20 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
 
 const Services = () => {
   return (
-    <section id="services" className="py-16 md:py-20 relative overflow-hidden bg-muted/30">
-      {/* Background blobs */}
-      <div className="absolute top-0 right-0 w-60 md:w-80 h-60 md:h-80 bg-primary/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-0 left-0 w-72 md:w-96 h-72 md:h-96 bg-cta/10 rounded-full blur-3xl -z-10" />
-      
+    <section id="services" className="py-24 md:py-36 relative overflow-hidden border-t border-border/40">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
+
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 md:mb-12 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            Our <span className="text-primary">Services</span>
+        <div className="text-center mb-16 animate-fade-in space-y-4">
+          <p className="eyebrow">Chapter II</p>
+          <h2 className="font-display text-5xl md:text-7xl text-foreground">
+            What <span className="italic text-primary text-glow">we craft</span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-center">
-            Comprehensive solutions across multiple domains
+          <p className="text-base text-muted-foreground max-w-xl mx-auto">
+            Ten disciplines, one studio. Each shaped to your moment.
           </p>
+          <div className="hairline w-32 mx-auto" />
         </div>
 
         <div className="max-w-6xl mx-auto space-y-4">
