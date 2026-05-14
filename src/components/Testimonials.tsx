@@ -8,6 +8,7 @@ import rajniTestimonial from "@/assets/testimonial-rajni.jpeg";
 import avoraTestimonial from "@/assets/testimonial-avora.jpeg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Reveal from "@/components/Reveal";
 
 const Testimonials = () => {
   const testimonials = [
@@ -68,7 +69,7 @@ const Testimonials = () => {
       <div className="absolute bottom-20 right-10 w-[500px] h-[500px] rounded-full opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-16 animate-fade-in space-y-4">
+        <Reveal className="text-center mb-16 space-y-4">
           <Quote className="w-8 h-8 mx-auto text-primary/70" />
           <p className="eyebrow">Chapter IV</p>
           <h2 className="font-display text-5xl md:text-7xl text-foreground">
@@ -76,7 +77,7 @@ const Testimonials = () => {
           </h2>
           <p className="text-base text-muted-foreground">Real stories from real partners.</p>
           <div className="hairline w-32 mx-auto" />
-        </div>
+        </Reveal>
 
         <Carousel 
           className="w-full max-w-3xl mx-auto px-8 sm:px-12"
