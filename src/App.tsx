@@ -8,6 +8,7 @@ import Internships from "./pages/Internships";
 import AdminApplications from "./pages/AdminApplications";
 import NotFound from "./pages/NotFound";
 import OfflineDetector from "./components/OfflineDetector";
+import SmoothScroll from "./components/SmoothScroll";
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <OfflineDetector>
+        <SmoothScroll />
         <Toaster />
         <Sonner />
         <BrowserRouter>
