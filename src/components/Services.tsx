@@ -4,6 +4,8 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Share2, Monitor, BarChart3, Calendar, Smartphone, Palette, Users, Package, Settings, Search, ArrowRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import Reveal from "@/components/Reveal";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -186,9 +188,14 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
   const isMobile = useIsMobile();
 
   const cardElement = (
+    <motion.div
+      initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.9, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+    >
     <Card 
-      className="border-2 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:scale-105 rounded-2xl overflow-hidden animate-fade-in cursor-pointer"
-      style={{ animationDelay: `${index * 0.1}s` }}
+      className="border-2 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_20px_60px_-20px_hsl(var(--primary)/0.5)] hover:-translate-y-1 rounded-2xl overflow-hidden cursor-pointer"
     >
       <CardHeader className="pb-3">
         <div className={`w-12 h-12 ${service.bgColor} rounded-xl flex items-center justify-center mb-2`}>
@@ -197,6 +204,7 @@ const ServiceCard = ({ service, index }: ServiceCardProps) => {
         <CardTitle className="text-sm font-bold leading-tight">{service.title}</CardTitle>
       </CardHeader>
     </Card>
+    </motion.div>
   );
 
   // Use Dialog for mobile (click-based), HoverCard for desktop
@@ -240,7 +248,7 @@ const Services = () => {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
 
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in space-y-4">
+        <Reveal className="text-center mb-16 space-y-4">
           <p className="eyebrow">Chapter II</p>
           <h2 className="font-display text-5xl md:text-7xl text-foreground">
             What <span className="italic text-primary text-glow">we craft</span>
@@ -249,7 +257,7 @@ const Services = () => {
             Ten disciplines, one studio. Each shaped to your moment.
           </p>
           <div className="hairline w-32 mx-auto" />
-        </div>
+        </Reveal>
 
         <div className="max-w-6xl mx-auto space-y-4">
           {/* First row - 4 cards on desktop, 2 on tablet, 1 on mobile */}

@@ -1,4 +1,5 @@
 import teamCircle from "@/assets/team-circle.png";
+import Reveal from "@/components/Reveal";
 
 const About = () => {
   return (
@@ -10,16 +11,16 @@ const About = () => {
 
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in space-y-4">
+          <Reveal className="text-center mb-16 space-y-4">
             <p className="eyebrow">Chapter I</p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground">
               Our <span className="italic text-primary text-glow">story</span>
             </h2>
             <div className="hairline w-32 mx-auto" />
-          </div>
+          </Reveal>
 
           <div className="relative">
-            <div className="float-none md:float-right md:ml-10 md:mb-8 w-full md:w-96 mx-auto md:mx-0 mb-10 md:mb-0">
+            <Reveal className="float-none md:float-right md:ml-10 md:mb-8 w-full md:w-96 mx-auto md:mx-0 mb-10 md:mb-0" y={60}>
               <div className="relative float-animation">
                 <img
                   src={teamCircle}
@@ -31,10 +32,10 @@ const About = () => {
                   style={{ background: "var(--gradient-glow)" }}
                 />
               </div>
-            </div>
+            </Reveal>
 
             <div className="space-y-10 text-base leading-relaxed">
-              <div className="bg-card/40 backdrop-blur-sm border border-border/60 p-8 md:p-10">
+              <Reveal className="bg-card/40 backdrop-blur-sm border border-border/60 p-8 md:p-10" y={50}>
                 <p className="eyebrow text-accent mb-4">Àkanní 2.0</p>
                 <h3 className="font-display text-3xl md:text-4xl text-foreground mb-6 italic">
                   A digital inclusion movement.
@@ -48,9 +49,9 @@ const About = () => {
                   social media, web profiles and e-commerce, without charging them. We want to hand them a stage
                   so they can be visible, respected, and self-sufficient in the digital world.
                 </p>
-              </div>
+              </Reveal>
 
-              <div className="text-left py-8 clear-right md:clear-none">
+              <Reveal className="text-left py-8 clear-right md:clear-none" y={50}>
                 <p className="font-display text-3xl sm:text-4xl md:text-5xl text-foreground leading-tight">
                   More than a service studio.
                   <br />
@@ -59,7 +60,7 @@ const About = () => {
                   <span className="italic"> technology</span>,
                   <span className="italic"> empathy</span>.
                 </p>
-              </div>
+              </Reveal>
             </div>
           </div>
         </div>

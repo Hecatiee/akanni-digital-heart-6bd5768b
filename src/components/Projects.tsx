@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Award, Leaf, BookOpen, Cloud, Newspaper, Trophy, Video, Instagram } from "lucide-react";
+import Reveal from "@/components/Reveal";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -75,9 +77,12 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
   const Icon = project.icon;
   const [flipped, setFlipped] = useState(false);
   return (
-    <div
-      className="group [perspective:1200px] animate-fade-in float-animation min-h-[260px] sm:min-h-[280px]"
-      style={{ animationDelay: `${index * 0.1}s` }}
+    <motion.div
+      className="group [perspective:1200px] min-h-[260px] sm:min-h-[280px]"
+      initial={{ opacity: 0, y: 60, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 1, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
       onClick={() => setFlipped((f) => !f)}
     >
       <div
@@ -117,7 +122,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -128,7 +133,7 @@ const Projects = () => {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
 
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in space-y-4">
+        <Reveal className="text-center mb-16 space-y-4">
           <p className="eyebrow">Chapter III</p>
           <h2 className="font-display text-5xl md:text-7xl text-foreground">
             Our <span className="italic text-primary text-glow">highlights</span>
@@ -137,7 +142,7 @@ const Projects = () => {
             From national stages to quiet community work. Hover or tap to read.
           </p>
           <div className="hairline w-32 mx-auto" />
-        </div>
+        </Reveal>
 
         <div className="max-w-6xl mx-auto space-y-4">
           {/* First row - 4 cards */}

@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Send } from "lucide-react";
 import { z } from "zod";
+import Reveal from "@/components/Reveal";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
@@ -75,17 +76,17 @@ const Contact = () => {
 
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in space-y-4">
+          <Reveal className="text-center mb-16 space-y-4">
             <p className="eyebrow">Chapter V</p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground">
               Let&apos;s <span className="italic text-primary text-glow">connect</span>
             </h2>
             <p className="text-base text-muted-foreground">A note, an idea, a hello. Send it over.</p>
             <div className="hairline w-32 mx-auto" />
-          </div>
+          </Reveal>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
+            <Reveal className="space-y-6" y={50}>
               <div className="bg-card/40 backdrop-blur-sm p-8 border border-border/60 hover:border-primary/40 transition-colors">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center">
@@ -126,9 +127,10 @@ const Contact = () => {
                   let&apos;s make it together.
                 </p>
               </div>
-            </div>
+            </Reveal>
 
-            <form onSubmit={handleSubmit} className="bg-card/40 backdrop-blur-sm p-8 border border-border/60 animate-fade-in">
+            <Reveal y={50} delay={0.15}>
+            <form onSubmit={handleSubmit} className="bg-card/40 backdrop-blur-sm p-8 border border-border/60">
               <div className="space-y-4">
                 <div>
                   <Input
@@ -179,6 +181,7 @@ const Contact = () => {
                 </Button>
               </div>
             </form>
+            </Reveal>
           </div>
         </div>
       </div>

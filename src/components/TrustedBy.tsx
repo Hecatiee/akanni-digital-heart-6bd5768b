@@ -1,3 +1,5 @@
+import Reveal from "@/components/Reveal";
+
 const topRow = [
   { name: "BOI", style: "font-serif font-bold uppercase tracking-widest" },
   { name: "MIT WPU", style: "font-heading font-black" },
@@ -43,10 +45,10 @@ const Marquee = ({ items, reverse = false }: { items: Item[]; reverse?: boolean 
 const TrustedBy = () => {
   return (
     <section className="py-24 md:py-32 overflow-hidden border-t border-border/40 relative">
-      <div className="container mx-auto px-4 mb-12 text-center space-y-3">
+      <Reveal className="container mx-auto px-4 mb-12 text-center space-y-3">
         <p className="eyebrow">Trusted by</p>
         <h2 className="font-display text-3xl md:text-4xl text-foreground italic">Partners along the way</h2>
-      </div>
+      </Reveal>
       <div className="space-y-10 md:space-y-14">
         <Marquee items={topRow} />
         <Marquee items={bottomRow} reverse />
