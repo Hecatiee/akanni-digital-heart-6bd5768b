@@ -56,13 +56,13 @@ const Navbar = () => {
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
             <img src={logo} alt="Àkanní Logo" className="h-10 w-auto opacity-90" />
-            <span className="hidden sm:inline font-display text-2xl text-foreground tracking-wide">Àkanní</span>
+            <span className="hidden lg:inline font-display text-2xl text-foreground tracking-wide">Àkanní</span>
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             {/* Nav Links */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-8 whitespace-nowrap">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
@@ -107,7 +107,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-foreground p-2 hover:bg-muted rounded-lg transition-colors"
+            className="lg:hidden text-foreground p-2 hover:bg-muted rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
@@ -116,7 +116,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
