@@ -32,7 +32,7 @@ const Hero = () => {
 
       <div className="container mx-auto px-4 py-12 relative z-10">
         <motion.div style={{ y, opacity }} className="max-w-5xl mx-auto text-center space-y-10">
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="eyebrow">À K A N N Í &nbsp; · &nbsp; D I G I T A L &nbsp; S T U D I O</motion.p>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="eyebrow text-[9px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.35em]">ÀKANNÍ &nbsp;·&nbsp; DIGITAL STUDIO</motion.p>
 
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-[9rem] leading-[0.95] text-foreground">
             {["One roof.", "All digital.", "Real impact."].map((line, i) => (
