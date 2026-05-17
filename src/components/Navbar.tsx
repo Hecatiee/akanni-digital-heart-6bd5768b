@@ -56,13 +56,13 @@ const Navbar = () => {
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
             <img src={logo} alt="Àkanní Logo" className="h-10 w-auto opacity-90" />
-            <span className="hidden lg:inline font-display text-2xl text-foreground tracking-wide">Àkanní</span>
+            <span className="hidden md:inline font-display text-2xl text-foreground tracking-wide">Àkanní</span>
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden md:flex items-center gap-6 lg:gap-10">
             {/* Nav Links */}
-            <div className="flex items-center gap-8 whitespace-nowrap">
+            <div className="flex items-center gap-4 lg:gap-8 whitespace-nowrap">
               {navLinks.map((link) => (
                 <button
                   key={link.name}
@@ -71,7 +71,7 @@ const Navbar = () => {
                       ? scrollToSection(link.id!) 
                       : handleNavigation(link.path!)
                   }
-                  className="text-foreground/80 hover:text-primary transition-colors font-body text-xs uppercase tracking-[0.25em]"
+                  className="text-foreground/80 hover:text-primary transition-colors font-body text-[10px] lg:text-xs uppercase tracking-[0.18em] lg:tracking-[0.25em]"
                 >
                   {link.name}
                 </button>
@@ -79,7 +79,7 @@ const Navbar = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center gap-4 border-l border-border/40 pl-8">
+            <div className="flex items-center gap-3 lg:gap-4 border-l border-border/40 pl-4 lg:pl-8">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -96,7 +96,7 @@ const Navbar = () => {
                 onClick={() => scrollToSection("contact")}
                 variant="outline"
                 size="default"
-                className="ml-2 border border-foreground/30 bg-transparent text-foreground hover:bg-foreground hover:text-background rounded-none font-body text-xs uppercase tracking-[0.2em]"
+                className="ml-2 border border-foreground/30 bg-transparent text-foreground hover:bg-foreground hover:text-background rounded-none font-body text-[10px] lg:text-xs uppercase tracking-[0.18em] lg:tracking-[0.2em]"
               >
                 <Mail className="h-4 w-4 mr-2" />
                 Contact
@@ -107,7 +107,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-foreground p-2 hover:bg-muted rounded-lg transition-colors"
+            className="md:hidden text-foreground p-2 hover:bg-muted rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
@@ -116,7 +116,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
