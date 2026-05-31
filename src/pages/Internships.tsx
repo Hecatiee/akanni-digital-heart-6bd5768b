@@ -17,6 +17,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InternShowcase from "@/components/InternShowcase";
 import { z } from "zod";
+import { Helmet } from "react-helmet-async";
 
 // Input validation schema
 const internshipApplicationSchema = z.object({
@@ -161,6 +162,14 @@ const Internships = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Internships at Àkanní — Apply to join the studio</title>
+        <meta name="description" content="Apply for an internship at Àkanní. Join a digital studio working on design, web, apps, marketing, and social impact." />
+        <link rel="canonical" href="https://akanni-digital-heart.lovable.app/internships" />
+        <meta property="og:title" content="Internships at Àkanní" />
+        <meta property="og:description" content="Apply for an internship at Àkanní. Join a digital studio working on design, web, apps, marketing, and social impact." />
+        <meta property="og:url" content="https://akanni-digital-heart.lovable.app/internships" />
+      </Helmet>
       <Navbar />
       
       <div className="pt-32 pb-20 px-4">
