@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://akanni-digital-heart.lovable.app/sitemap.xml
