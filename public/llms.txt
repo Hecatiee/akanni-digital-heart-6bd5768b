@@ -1,0 +1,8 @@
+# Àkanní
+
+> Àkanní is a full-stack digital studio for AI design, web and app development, marketing, and social impact.
+
+## Pages
+
+- [Home](/): Studio overview, services, projects, testimonials, and contact.
+- [Internships](/internships): Apply to join the Àkanní internship program.
