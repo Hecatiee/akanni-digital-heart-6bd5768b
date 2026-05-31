@@ -16,6 +16,7 @@ import { toast } from "sonner";
 import { ArrowLeft, Download, LogIn, LogOut } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Helmet } from "react-helmet-async";
 
 const AdminApplications = () => {
   const navigate = useNavigate();
@@ -115,6 +116,12 @@ const AdminApplications = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <Helmet>
+        <title>Admin — Internship Applications | Àkanní</title>
+        <meta name="description" content="Internal admin view for managing internship applications at Àkanní." />
+        <meta name="robots" content="noindex, nofollow" />
+        <link rel="canonical" href="https://akanni-digital-heart.lovable.app/admin/applications" />
+      </Helmet>
       <Navbar />
       <div className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl">
