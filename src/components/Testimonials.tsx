@@ -1,4 +1,4 @@
-import { Quote } from "lucide-react";
+import { Quote, Orbit } from "lucide-react";
 import boiTestimonial from "@/assets/testimonial-boi.jpeg";
 import comicBeeTestimonial from "@/assets/testimonial-comicbee.jpeg";
 import kawaltheTestimonial from "@/assets/testimonial-kawalthe.jpeg";
@@ -95,12 +95,16 @@ const Testimonials = () => {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
-                <div className="bg-card/50 backdrop-blur-sm p-4 sm:p-6 transition-all duration-300 animate-fade-in border border-border/60 hover:border-primary/40">
-                  <div className="flex flex-col items-center">
+                <div className="relative group p-[1px] rounded-2xl bg-gradient-to-br from-primary/40 via-accent/20 to-primary/10 animate-fade-in">
+                  <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full opacity-40 pointer-events-none" style={{ background: "var(--gradient-glow)", filter: "blur(40px)" }} />
+                  <div className="absolute -bottom-10 -right-10 w-40 h-40 rounded-full opacity-30 pointer-events-none" style={{ background: "var(--gradient-amber)", filter: "blur(40px)" }} />
+                  <div className="relative bg-card/70 backdrop-blur-xl p-4 sm:p-6 rounded-2xl border border-primary/10 overflow-hidden">
+                    <Orbit className="absolute top-3 right-3 w-4 h-4 text-primary/40 animate-spin" style={{ animationDuration: "18s" }} />
+                    <div className="flex flex-col items-center">
                     <img 
                       src={testimonial.image} 
                       alt={testimonial.alt}
-                      className="w-full max-w-xl h-auto mb-6 object-contain border border-border/40"
+                      className="w-full max-w-xl h-auto mb-6 object-contain rounded-lg border border-primary/20 shadow-[0_0_40px_-10px_hsl(195_90%_70%/0.4)]"
                       loading="eager"
                       decoding="async"
                     />
@@ -120,6 +124,7 @@ const Testimonials = () => {
                       >
                         Visit profile →
                       </a>
+                    </div>
                     </div>
                   </div>
                 </div>
