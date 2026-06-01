@@ -64,7 +64,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="relative py-24 md:py-36 px-4 sm:px-6 overflow-hidden border-t border-border/40">
+    <section className="relative py-16 md:py-36 px-4 sm:px-6 overflow-hidden border-t border-border/40">
       <div className="absolute top-20 left-10 w-[500px] h-[500px] rounded-full opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
       <div className="absolute bottom-20 right-10 w-[500px] h-[500px] rounded-full opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
 

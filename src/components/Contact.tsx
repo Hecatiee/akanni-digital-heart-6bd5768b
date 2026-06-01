@@ -70,7 +70,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-36 relative overflow-hidden border-t border-border/40">
+    <section id="contact" className="py-16 md:py-36 relative overflow-hidden border-t border-border/40">
       <div className="absolute top-20 left-10 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
       <div className="absolute bottom-20 right-10 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
 
