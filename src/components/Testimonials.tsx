@@ -71,7 +71,6 @@ const Testimonials = () => {
       <div className="max-w-5xl mx-auto relative z-10">
         <Reveal className="text-center mb-16 space-y-4">
           <Quote className="w-8 h-8 mx-auto text-primary/70" />
-          <p className="eyebrow">Chapter IV</p>
           <h2 className="font-display text-5xl md:text-7xl text-foreground">
             Our <span className="italic text-primary text-glow">clients</span>
           </h2>

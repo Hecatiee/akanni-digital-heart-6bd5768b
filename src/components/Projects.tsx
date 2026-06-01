@@ -134,7 +134,6 @@ const Projects = () => {
 
       <div className="container mx-auto px-4">
         <Reveal className="text-center mb-16 space-y-4">
-          <p className="eyebrow">Chapter III</p>
           <h2 className="font-display text-5xl md:text-7xl text-foreground">
             Our <span className="italic text-primary text-glow">highlights</span>
           </h2>
