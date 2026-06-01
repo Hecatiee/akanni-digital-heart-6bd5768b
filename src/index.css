@@ -9,14 +9,14 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Cinematic midnight base */
-    --background: 230 55% 6%;
+    --background: 232 70% 4%;
     --foreground: 40 30% 92%;
 
     /* Surfaces sit slightly lifted from the void */
-    --card: 230 45% 9%;
+    --card: 232 55% 7%;
     --card-foreground: 40 30% 92%;
 
-    --popover: 230 45% 10%;
+    --popover: 232 55% 8%;
     --popover-foreground: 40 30% 92%;
 
     /* Cyan glow as the lead voice */
@@ -48,10 +48,11 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* Cinematic gradients & shadows */
-    --gradient-night: radial-gradient(ellipse at top, hsl(225 70% 14%) 0%, hsl(230 60% 7%) 55%, hsl(232 65% 4%) 100%);
-    --gradient-glow: radial-gradient(circle at center, hsl(195 90% 70% / 0.35), transparent 65%);
-    --gradient-amber: radial-gradient(circle at center, hsl(35 90% 65% / 0.25), transparent 60%);
+    /* Cinematic outer-space gradients */
+    --gradient-night: radial-gradient(ellipse at 50% -10%, hsl(225 75% 16%) 0%, hsl(230 70% 6%) 45%, hsl(235 80% 3%) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(210 95% 65% / 0.35), transparent 65%);
+    --gradient-amber: radial-gradient(circle at center, hsl(280 80% 60% / 0.22), transparent 60%);
+    --gradient-nebula: radial-gradient(ellipse at 20% 30%, hsl(265 70% 35% / 0.35), transparent 55%), radial-gradient(ellipse at 80% 70%, hsl(195 80% 45% / 0.28), transparent 55%);
     --shadow-glow: 0 0 60px -10px hsl(195 90% 70% / 0.45);
     --shadow-deep: 0 30px 80px -30px hsl(230 80% 2% / 0.8);
 
