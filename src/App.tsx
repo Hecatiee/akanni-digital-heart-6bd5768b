@@ -9,6 +9,7 @@ import AdminApplications from "./pages/AdminApplications";
 import NotFound from "./pages/NotFound";
 import OfflineDetector from "./components/OfflineDetector";
 import SmoothScroll from "./components/SmoothScroll";
+import SpaceBackground from "./components/SpaceBackground";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <OfflineDetector>
+        <SpaceBackground />
         <SmoothScroll />
         <Toaster />
         <Sonner />

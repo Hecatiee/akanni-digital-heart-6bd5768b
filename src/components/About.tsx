@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 md:py-36 relative overflow-hidden">
+    <section id="about" className="py-16 md:py-36 relative overflow-hidden">
       <div
         className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full -z-10 opacity-40"
         style={{ background: "var(--gradient-glow)", filter: "blur(60px)" }}

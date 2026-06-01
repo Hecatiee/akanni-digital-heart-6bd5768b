@@ -128,7 +128,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
 const Projects = () => {
   return (
-    <section className="py-24 md:py-36 relative overflow-hidden border-t border-border/40">
+    <section className="py-16 md:py-36 relative overflow-hidden border-t border-border/40">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
 
