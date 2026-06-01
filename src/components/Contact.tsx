@@ -78,6 +78,7 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           <Reveal className="text-center mb-16 space-y-4">
             <p className="eyebrow">Chapter V</p>
+            <p className="eyebrow text-accent">Our Team</p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground">
               Let&apos;s <span className="italic text-primary text-glow">connect</span>
             </h2>
