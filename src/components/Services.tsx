@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
-import { Share2, Monitor, BarChart3, Calendar, Smartphone, Palette, Users, Package, Settings, Search, ArrowRight } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Share2, Monitor, BarChart3, Calendar, Smartphone,
+  Palette, Users, Package, Settings, Search, ArrowRight, Plus, Minus,
+} from "lucide-react";
 import Reveal from "@/components/Reveal";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   {
