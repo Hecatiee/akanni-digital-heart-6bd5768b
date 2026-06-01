@@ -224,7 +224,6 @@ const Services = () => {
 
       <div className="container mx-auto px-4 sm:px-6">
         <Reveal className="text-center mb-12 md:mb-16 space-y-4">
-          <p className="eyebrow">Chapter II</p>
           <h2 className="font-display text-4xl sm:text-5xl md:text-7xl text-foreground">
             What <span className="italic text-primary text-glow">we craft</span>
           </h2>

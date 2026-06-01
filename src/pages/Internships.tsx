@@ -184,7 +184,6 @@ const Internships = () => {
           </Button>
 
           <div className="text-center mb-12 space-y-4">
-            <p className="eyebrow">Apply</p>
             <h1 className="font-display text-5xl md:text-7xl text-foreground">
               Find your <span className="italic text-primary text-glow">internship</span>
             </h1>
