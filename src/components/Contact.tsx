@@ -6,6 +6,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Send } from "lucide-react";
 import { z } from "zod";
 import Reveal from "@/components/Reveal";
+import SpaceDecor from "@/components/SpaceDecor";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name is too long"),
@@ -73,6 +74,8 @@ const Contact = () => {
     <section id="contact" className="py-16 md:py-36 relative overflow-hidden border-t border-border/40">
       <div className="absolute top-20 left-10 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
       <div className="absolute bottom-20 right-10 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
+      <SpaceDecor variant="orbit" size={180} className="top-10 right-10 hidden md:block" />
+      <SpaceDecor variant="satellite" size={48} className="bottom-16 left-8" />
 
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">

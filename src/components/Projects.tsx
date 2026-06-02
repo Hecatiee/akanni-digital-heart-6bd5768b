@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Award, Leaf, BookOpen, Cloud, Newspaper, Trophy, Video, Instagram } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { motion } from "framer-motion";
+import SpaceDecor from "@/components/SpaceDecor";
 
 const projects = [
   {
@@ -131,6 +132,8 @@ const Projects = () => {
     <section className="py-16 md:py-36 relative overflow-hidden border-t border-border/40">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full -z-10 opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full -z-10 opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
+      <SpaceDecor variant="planet" size={90} className="top-16 right-8 md:right-20 hidden sm:block" color="radial-gradient(circle at 30% 30%, hsl(40 90% 75% / 0.95), hsl(20 80% 40% / 0.6) 55%, hsl(235 80% 8% / 0.9) 100%)" />
+      <SpaceDecor variant="rocket" size={48} className="bottom-24 left-6 md:left-16" />
 
       <div className="container mx-auto px-4">
         <Reveal className="text-center mb-16 space-y-4">

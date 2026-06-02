@@ -1,5 +1,6 @@
 import teamCircle from "@/assets/team-circle.png";
 import Reveal from "@/components/Reveal";
+import SpaceDecor from "@/components/SpaceDecor";
 
 const About = () => {
   return (
@@ -8,6 +9,8 @@ const About = () => {
         className="absolute top-20 right-0 w-[600px] h-[600px] rounded-full -z-10 opacity-40"
         style={{ background: "var(--gradient-glow)", filter: "blur(60px)" }}
       />
+      <SpaceDecor variant="satellite" size={56} className="top-12 left-6 md:left-16" />
+      <SpaceDecor variant="comet" size={140} className="bottom-24 right-10" />
 
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
