@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import OfflineDetector from "./components/OfflineDetector";
 import SmoothScroll from "./components/SmoothScroll";
 import SpaceBackground from "./components/SpaceBackground";
+import AmbientAudio from "./components/AmbientAudio";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
         <SmoothScroll />
         <Toaster />
         <Sonner />
+        <AmbientAudio />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />

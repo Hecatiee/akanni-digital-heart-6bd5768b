@@ -3,6 +3,7 @@ import { ArrowRight, MoveDown } from "lucide-react";
 import Starfield from "@/components/Starfield";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import SpaceDecor from "@/components/SpaceDecor";
 
 const Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,6 +29,11 @@ const Hero = () => {
         {/* Vignette */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,hsl(232_70%_3%)_100%)]" />
       </div>
+      <SpaceDecor variant="planet" size={120} className="top-28 left-6 md:left-16" />
+      <SpaceDecor variant="rocket" size={56} className="bottom-32 right-8 md:right-24" />
+      <SpaceDecor variant="satellite" size={52} className="top-1/3 right-10 hidden md:block" />
+      <SpaceDecor variant="comet" size={160} className="top-20 left-1/4" />
+      <SpaceDecor variant="orbit" size={220} className="bottom-10 left-10 hidden lg:block" />
       <div className="grain" />
 
       <div className="container mx-auto px-4 py-12 relative z-10">

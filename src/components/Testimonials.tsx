@@ -9,6 +9,7 @@ import avoraTestimonial from "@/assets/testimonial-avora.jpeg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Reveal from "@/components/Reveal";
+import SpaceDecor from "@/components/SpaceDecor";
 
 const Testimonials = () => {
   const testimonials = [
@@ -67,6 +68,11 @@ const Testimonials = () => {
     <section className="relative py-16 md:py-36 px-4 sm:px-6 overflow-hidden border-t border-border/40">
       <div className="absolute top-20 left-10 w-[500px] h-[500px] rounded-full opacity-30" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
       <div className="absolute bottom-20 right-10 w-[500px] h-[500px] rounded-full opacity-25" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
+      <SpaceDecor variant="planet" size={110} className="top-10 right-6 md:right-20 hidden sm:block" />
+      <SpaceDecor variant="rocket" size={48} className="top-1/3 left-4 md:left-12" />
+      <SpaceDecor variant="satellite" size={56} className="bottom-16 left-1/4 hidden md:block" />
+      <SpaceDecor variant="orbit" size={180} className="bottom-10 right-10 hidden md:block" />
+      <SpaceDecor variant="comet" size={120} className="top-24 left-1/3" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <Reveal className="text-center mb-16 space-y-4">
