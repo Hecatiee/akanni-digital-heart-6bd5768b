@@ -18,6 +18,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import SpaceDecor from "@/components/SpaceDecor";
 
 const interns = [
   {
@@ -104,6 +105,9 @@ const InternShowcase = () => {
     <section className="relative py-16 md:py-20 px-4 sm:px-6 overflow-hidden border-t border-border/40">
       <div className="absolute top-20 left-10 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
       <div className="absolute bottom-20 right-10 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "var(--gradient-amber)", filter: "blur(80px)" }} />
+      <SpaceDecor variant="planet" size={90} className="top-6 left-6 hidden sm:block" color="radial-gradient(circle at 30% 30%, hsl(40 90% 75% / 0.95), hsl(20 80% 40% / 0.6) 55%, hsl(235 80% 8% / 0.9) 100%)" />
+      <SpaceDecor variant="satellite" size={48} className="top-1/2 right-6 md:right-16" />
+      <SpaceDecor variant="comet" size={140} className="bottom-24 left-10" />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-12 animate-fade-in space-y-4">
