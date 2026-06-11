@@ -22,12 +22,12 @@ const AmbientAudio = () => {
     master.gain.value = 0;
     const filter = ctx.createBiquadFilter();
     filter.type = "lowpass";
-    filter.frequency.value = 700;
+    filter.frequency.value = 2200;
     filter.Q.value = 0.6;
 
     // Soft chord: low root + fifth + high shimmer, slightly detuned
-    const freqs = [55, 82.5, 110, 164.81];
-    const types: OscillatorType[] = ["sine", "sine", "triangle", "sine"];
+    const freqs = [110, 165, 220, 329.63, 440];
+    const types: OscillatorType[] = ["sine", "sine", "triangle", "sine", "sine"];
     const oscs: OscillatorNode[] = [];
     freqs.forEach((f, i) => {
       const o = ctx.createOscillator();
@@ -35,12 +35,12 @@ const AmbientAudio = () => {
       o.frequency.value = f;
       o.detune.value = (i - 1) * 6;
       const g = ctx.createGain();
-      g.gain.value = i === 3 ? 0.06 : 0.12;
+      g.gain.value = i >= 3 ? 0.12 : 0.22;
       // Slow LFO on gain for breathing
       const lfo = ctx.createOscillator();
       lfo.frequency.value = 0.05 + i * 0.02;
       const lfoGain = ctx.createGain();
-      lfoGain.gain.value = 0.04;
+      lfoGain.gain.value = 0.06;
       lfo.connect(lfoGain).connect(g.gain);
       o.connect(g).connect(filter);
       o.start();
@@ -63,7 +63,8 @@ const AmbientAudio = () => {
     setOn(next);
     const now = ctx.currentTime;
     masterRef.current.gain.cancelScheduledValues(now);
-    masterRef.current.gain.linearRampToValueAtTime(next ? 0.18 : 0, now + 1.4);
+    masterRef.current.gain.setValueAtTime(masterRef.current.gain.value, now);
+    masterRef.current.gain.linearRampToValueAtTime(next ? 0.6 : 0, now + 1.4);
   };
 
   useEffect(() => {
