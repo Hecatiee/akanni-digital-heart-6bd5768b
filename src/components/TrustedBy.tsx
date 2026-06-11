@@ -11,6 +11,7 @@ const bottomRow = [
   { name: "Heartfulness", style: "font-serif italic" },
   { name: "Bhakti Cure", style: "font-serif font-semibold" },
   { name: "Avora", style: "font-serif font-semibold tracking-wide" },
+  { name: "Vittaedu", style: "font-heading font-bold tracking-wide" },
 ];
 
 type Item = { name: string; style: string };
