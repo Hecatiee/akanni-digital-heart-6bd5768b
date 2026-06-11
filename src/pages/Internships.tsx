@@ -219,6 +219,12 @@ const Internships = () => {
                   >
                     +91 90041 38118
                   </a>
+                  <a 
+                    href="tel:+918208125606"
+                    className="block font-medium hover:text-secondary transition-colors"
+                  >
+                    +91 82081 25606
+                  </a>
                 </div>
               </div>
             </div>
