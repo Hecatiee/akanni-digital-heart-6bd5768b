@@ -14,6 +14,7 @@ const bottomRow = [
   { name: "Vittaedu", style: "font-heading font-bold tracking-wide" },
 ];
 
+
 type Item = { name: string; style: string };
 
 const Marquee = ({ items, reverse = false }: { items: Item[]; reverse?: boolean }) => {
