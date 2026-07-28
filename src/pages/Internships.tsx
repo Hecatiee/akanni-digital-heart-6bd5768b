@@ -16,6 +16,7 @@ import { Upload, ArrowLeft, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import InternShowcase from "@/components/InternShowcase";
+import InternAnnouncement from "@/components/InternAnnouncement";
 import { z } from "zod";
 import { Helmet } from "react-helmet-async";
 
