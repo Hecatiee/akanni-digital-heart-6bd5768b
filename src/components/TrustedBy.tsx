@@ -12,6 +12,7 @@ const bottomRow = [
   { name: "Bhakti Cure", style: "font-serif font-semibold" },
   { name: "Avora", style: "font-serif font-semibold tracking-wide" },
   { name: "Vittaedu", style: "font-heading font-bold tracking-wide" },
+  { name: "RRU Lucknow", style: "font-serif font-bold uppercase tracking-widest" },
 ];
 
 type Item = { name: string; style: string };

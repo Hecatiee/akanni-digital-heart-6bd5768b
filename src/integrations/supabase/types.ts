@@ -50,6 +50,51 @@ export type Database = {
         }
         Relationships: []
       }
+      product_inquiries: {
+        Row: {
+          company_name: string
+          contact_name: string
+          created_at: string
+          id: string
+          industry: string | null
+          phone: string | null
+          preferred_date: string | null
+          preferred_time: string | null
+          role: string | null
+          use_case: string | null
+          website: string | null
+          work_email: string
+        }
+        Insert: {
+          company_name: string
+          contact_name: string
+          created_at?: string
+          id?: string
+          industry?: string | null
+          phone?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+          role?: string | null
+          use_case?: string | null
+          website?: string | null
+          work_email: string
+        }
+        Update: {
+          company_name?: string
+          contact_name?: string
+          created_at?: string
+          id?: string
+          industry?: string | null
+          phone?: string | null
+          preferred_date?: string | null
+          preferred_time?: string | null
+          role?: string | null
+          use_case?: string | null
+          website?: string | null
+          work_email?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
