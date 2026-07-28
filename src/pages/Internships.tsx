@@ -230,8 +230,6 @@ const Internships = () => {
             </div>
           </div>
 
-          
-
           <form onSubmit={handleSubmit} className="bg-card rounded-2xl shadow-lg p-8 border border-border">
             <div className="space-y-6">
               {/* Full Name */}
