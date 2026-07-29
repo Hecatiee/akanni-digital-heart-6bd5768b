@@ -17,7 +17,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { ArrowLeft, CalendarClock, Video, LineChart, ShieldCheck, Gauge, Copy } from "lucide-react";
+import { ArrowLeft, CalendarClock, Video, LineChart, ShieldCheck, Gauge, Copy, CalendarIcon } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { format } from "date-fns";
+import { cn } from "@/lib/utils";
 
 const GMEET_LINK = "https://meet.google.com/cyv-auty-wky";
 
@@ -45,6 +49,17 @@ const slots = [
   "02:00 PM - 02:30 PM",
   "04:00 PM - 04:30 PM",
   "06:30 PM - 07:00 PM",
+];
+
+const streams = [
+  "Instagram",
+  "Facebook / Meta",
+  "LinkedIn",
+  "X (Twitter)",
+  "YouTube",
+  "Threads",
+  "Multiple platforms",
+  "Other",
 ];
 
 const highlights = [
@@ -122,11 +137,11 @@ const Product = () => {
   return (
     <main className="min-h-screen bg-background">
       <Helmet>
-        <title>Our Product — Àkanní forecast platform</title>
-        <meta name="description" content="Book a live demo of the Àkanní forecast product. Share your company details, pick a slot, and join on Google Meet." />
+        <title>Kairos.ai — Àkanní forecast platform</title>
+        <meta name="description" content="Book a live demo of Kairos.ai, the Àkanní forecast platform. Share your company details, pick a slot, and join on Google Meet." />
         <link rel="canonical" href="https://akanni-digital-heart.lovable.app/product" />
-        <meta property="og:title" content="Our Product — Àkanní forecast platform" />
-        <meta property="og:description" content="Book a live demo of the Àkanní forecast product. Share your company details, pick a slot, and join on Google Meet." />
+        <meta property="og:title" content="Kairos.ai — Àkanní forecast platform" />
+        <meta property="og:description" content="Book a live demo of Kairos.ai, the Àkanní forecast platform. Share your company details, pick a slot, and join on Google Meet." />
         <meta property="og:url" content="https://akanni-digital-heart.lovable.app/product" />
       </Helmet>
       <Navbar />
@@ -139,8 +154,9 @@ const Product = () => {
           <header className="text-center mb-12 space-y-4">
             <p className="eyebrow">Our Product</p>
             <h1 className="font-display text-4xl md:text-7xl text-foreground">
-              The <span className="italic text-primary text-glow">forecast</span> platform
+              <span className="italic text-primary text-glow">Kairos.ai</span>
             </h1>
+            <p className="eyebrow">The forecast platform</p>
             <p className="text-muted-foreground text-sm md:text-base max-w-2xl mx-auto">
               A decision layer for growing businesses. Connect your numbers and see where demand, revenue, and
               attention are heading, in language your whole team understands.
@@ -156,11 +172,16 @@ const Product = () => {
               </div>
             ))}
           </div>
-          <div className="mb-8 border border-accent/40 bg-accent/5 p-5">
-            <p className="text-sm text-foreground/90 leading-relaxed">
-              <span className="font-semibold">Note:</span> This usage of the product is in trial phase and there
-              would be a small charge to witness the beauty of the forecast product. That would be around
-              <span className="text-accent font-semibold"> ₹800 INR</span>.
+          <div className="relative mb-10 overflow-hidden border border-primary/30 bg-card/50 backdrop-blur-sm p-6 text-center">
+            <div
+              className="absolute inset-0 -z-10 opacity-30 pointer-events-none"
+              style={{ background: "var(--gradient-glow)", filter: "blur(60px)" }}
+            />
+            <p className="eyebrow mb-2">Note</p>
+            <p className="text-sm text-foreground/90 leading-relaxed max-w-xl mx-auto">
+              This usage of the product is in trial phase and there would be a small charge to witness the beauty
+              of the forecast product. That would be around{" "}
+              <span className="text-primary text-glow font-semibold">₹800 INR</span>.
             </p>
           </div>
           {booked ? (
@@ -242,7 +263,17 @@ const Product = () => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="useCase">What would you like to forecast?</Label>
-                <Textarea id="useCase" value={formData.useCase} onChange={(e) => setFormData({ ...formData, useCase: e.target.value })} placeholder="Tell us briefly about your data and what you want to see." rows={4} />
+                <p className="text-xs text-muted-foreground">Which social stream are you focused on? For example Instagram, Facebook, Meta, LinkedIn or X.</p>
+                <Select value={formData.useCase} onValueChange={(value) => setFormData({ ...formData, useCase: value })}>
+                  <SelectTrigger id="useCase">
+                    <SelectValue placeholder="Select a platform" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {streams.map((s) => (
+                      <SelectItem key={s} value={s}>{s}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
               </div>
               <div>
                 <p className="eyebrow mb-1">Book a slot</p>
@@ -251,20 +282,59 @@ const Product = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="preferredDate">Preferred date *</Label>
-                  <Input id="preferredDate" type="date" min={today} value={formData.preferredDate} onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })} required />
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <Button
+                        id="preferredDate"
+                        type="button"
+                        variant="outline"
+                        className={cn(
+                          "w-full justify-start rounded-none font-normal",
+                          !formData.preferredDate && "text-muted-foreground"
+                        )}
+                      >
+                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        {formData.preferredDate
+                          ? format(new Date(formData.preferredDate), "PPP")
+                          : "Pick a date"}
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0 bg-popover" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={formData.preferredDate ? new Date(formData.preferredDate) : undefined}
+                        onSelect={(date) =>
+                          setFormData({
+                            ...formData,
+                            preferredDate: date ? format(date, "yyyy-MM-dd") : "",
+                          })
+                        }
+                        disabled={(date) => format(date, "yyyy-MM-dd") < today}
+                        initialFocus
+                        className="pointer-events-auto"
+                      />
+                    </PopoverContent>
+                  </Popover>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="preferredTime">Preferred slot *</Label>
-                  <Select value={formData.preferredTime} onValueChange={(value) => setFormData({ ...formData, preferredTime: value })}>
-                    <SelectTrigger id="preferredTime">
-                      <SelectValue placeholder="Select a slot" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {slots.map((slot) => (
-                        <SelectItem key={slot} value={slot}>{slot}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <Label>Preferred slot *</Label>
+                  <div className="grid grid-cols-1 gap-2">
+                    {slots.map((slot) => (
+                      <button
+                        key={slot}
+                        type="button"
+                        onClick={() => setFormData({ ...formData, preferredTime: slot })}
+                        className={cn(
+                          "border px-3 py-2 text-xs uppercase tracking-[0.15em] transition-colors",
+                          formData.preferredTime === slot
+                            ? "border-primary text-primary bg-primary/10"
+                            : "border-border text-muted-foreground hover:border-primary/50 hover:text-foreground"
+                        )}
+                      >
+                        {slot}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
               <Button type="submit" disabled={isSubmitting} className="w-full rounded-none">
