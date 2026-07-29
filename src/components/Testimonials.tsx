@@ -1,4 +1,5 @@
 import { Quote, Orbit } from "lucide-react";
+import { useMemo } from "react";
 import boiTestimonial from "@/assets/testimonial-boi.jpeg";
 import comicBeeTestimonial from "@/assets/testimonial-comicbee.jpeg";
 import kawaltheTestimonial from "@/assets/testimonial-kawalthe.jpeg";
@@ -11,8 +12,17 @@ import Autoplay from "embla-carousel-autoplay";
 import Reveal from "@/components/Reveal";
 import SpaceDecor from "@/components/SpaceDecor";
 
+const shuffle = <T,>(items: T[]) => {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+
 const Testimonials = () => {
-  const testimonials = [
+  const allTestimonials = [
     {
       image: boiTestimonial,
       alt: "Mukund Satpute - Federation of Bank of India Pensioners and Retirees Associations Testimonial",
@@ -63,6 +73,7 @@ const Testimonials = () => {
       link: "https://www.instagram.com/rajniraut230?igsh=angxYnljODZldGVp"
     }
   ];
+  const testimonials = useMemo(() => shuffle(allTestimonials), []);
 
   return (
     <section className="relative py-16 md:py-36 px-4 sm:px-6 overflow-hidden border-t border-border/40">

@@ -9,7 +9,11 @@ import internRishi from "@/assets/intern-rishi.jpeg";
 import internPushkar from "@/assets/intern-pushkar.jpeg";
 import internAditi from "@/assets/intern-aditi.jpeg";
 import internOmkar from "@/assets/intern-omkar.jpeg";
+import internShubhanAsset from "@/assets/intern-shubhan.png.asset.json";
+import internAdityaShindeAsset from "@/assets/intern-aditya-shinde.png.asset.json";
+import internVedAsset from "@/assets/intern-ved.png.asset.json";
 import { Quote, Orbit } from "lucide-react";
+import { useMemo } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -98,9 +102,40 @@ const interns = [
     role: "Web Developer",
     batch: "Letter of Appreciation, MIT WPU, Pune",
   },
+  {
+    image: internShubhanAsset.url,
+    alt: "Shubhan Khairnar - Web Developer, Letter of Appreciation",
+    name: "Shubhan Khairnar",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internAdityaShindeAsset.url,
+    alt: "Aditya Shinde - Web Developer, Letter of Recommendation",
+    name: "Aditya Shinde",
+    role: "Web Developer",
+    batch: "Letter of Recommendation, Symbiosis, Pune",
+  },
+  {
+    image: internVedAsset.url,
+    alt: "Ved Khairnar - Web Developer, Letter of Appreciation",
+    name: "Ved Khairnar",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
 ];
 
+const shuffle = <T,>(items: T[]) => {
+  const arr = [...items];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+};
+
 const InternShowcase = () => {
+  const shuffledInterns = useMemo(() => shuffle(interns), []);
   return (
     <section className="relative py-16 md:py-20 px-4 sm:px-6 overflow-hidden border-t border-border/40">
       <div className="absolute top-20 left-10 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "var(--gradient-glow)", filter: "blur(80px)" }} />
@@ -126,7 +161,7 @@ const InternShowcase = () => {
           plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]}
         >
           <CarouselContent>
-            {interns.map((intern, index) => (
+            {shuffledInterns.map((intern, index) => (
               <CarouselItem key={index}>
                 <div className="relative group p-[1px] rounded-2xl bg-gradient-to-br from-primary/40 via-accent/20 to-primary/10 animate-fade-in">
                   <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full opacity-40 pointer-events-none" style={{ background: "var(--gradient-glow)", filter: "blur(40px)" }} />
