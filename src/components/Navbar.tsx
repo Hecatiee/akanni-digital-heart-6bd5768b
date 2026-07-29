@@ -23,7 +23,8 @@ const Navbar = () => {
     { name: "Our Services", id: "services", type: "scroll" },
     { name: "Testimonials", id: "testimonials", type: "scroll" },
     { name: "Our Product", path: "/product", type: "navigate" },
-    { name: "Internships / Courses", path: "/internships", type: "navigate" },
+    { name: "Internships", path: "/internships", type: "navigate" },
+    { name: "Courses", path: "/courses", type: "navigate" },
   ];
 
   const socialLinks = [
