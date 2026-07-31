@@ -122,7 +122,8 @@ const Testimonials = () => {
                       src={testimonial.image} 
                       alt={testimonial.alt}
                       className="w-full max-w-xl h-auto mb-6 object-contain rounded-lg border border-primary/20 shadow-[0_0_40px_-10px_hsl(195_90%_70%/0.4)]"
-                      loading="eager"
+                      loading={index < 2 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : "low"}
                       decoding="async"
                     />
                     <div className="text-center">
