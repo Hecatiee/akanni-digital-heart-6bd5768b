@@ -3,7 +3,7 @@ import internAtharva from "@/assets/intern-atharva.png";
 import internTrupti from "@/assets/intern-trupti.png";
 import internRiddhi from "@/assets/intern-riddhi.png";
 import internMrunali from "@/assets/intern-mrunali.png";
-import internNirmiti from "@/assets/intern-nirmiti.png";
+import internNirmiti from "@/assets/intern-nirmiti-new.png.asset.json";
 import internAditya from "@/assets/intern-aditya.jpeg";
 import internRishi from "@/assets/intern-rishi.jpeg";
 import internPushkar from "@/assets/intern-pushkar.jpeg";
