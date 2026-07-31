@@ -1,5 +1,6 @@
 import courseHarish from "@/assets/course-harish.jpg.asset.json";
 import courseTanaya from "@/assets/course-tanaya.jpg.asset.json";
+import courseMasud from "@/assets/course-masud.jpg.asset.json";
 import { Quote, Orbit } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -26,6 +27,13 @@ const learners = [
     name: "Tanaya Joshi",
     role: "Web Developer",
     batch: "Course Completion, MIT WPU, Pune",
+  },
+  {
+    image: courseMasud.url,
+    alt: "Masud Abbasi - Social Media, Course Completion",
+    name: "Masud Abbasi",
+    role: "Social Media",
+    batch: "Course Completion, Central University, Tamil Nadu",
   },
 ];
 
@@ -74,8 +82,10 @@ const CourseShowcase = () => {
                         src={person.image}
                         alt={person.alt}
                         className="w-full max-w-xl h-auto mb-6 object-contain rounded-lg border border-primary/20 shadow-[0_0_40px_-10px_hsl(195_90%_70%/0.4)]"
-                        loading="eager"
+                        loading={index === 0 ? "eager" : "lazy"}
                         decoding="async"
+                        width={1000}
+                        height={1250}
                       />
                       <div className="text-center">
                         <h3 className="font-display text-2xl text-foreground italic mb-2">{person.name}</h3>
