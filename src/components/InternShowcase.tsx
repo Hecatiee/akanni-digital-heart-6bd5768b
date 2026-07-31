@@ -12,6 +12,13 @@ import internOmkar from "@/assets/intern-omkar.jpeg";
 import internShubhanAsset from "@/assets/intern-shubhan.png.asset.json";
 import internAdityaShindeAsset from "@/assets/intern-aditya-shinde.png.asset.json";
 import internVedAsset from "@/assets/intern-ved.png.asset.json";
+import internAayush from "@/assets/intern-aayush.jpg.asset.json";
+import internNundana from "@/assets/intern-nundana.jpg.asset.json";
+import internInshal from "@/assets/intern-inshal.jpg.asset.json";
+import internSavani from "@/assets/intern-savani.jpg.asset.json";
+import internVedant from "@/assets/intern-vedant.jpg.asset.json";
+import internSmit from "@/assets/intern-smit.jpg.asset.json";
+import internRevati from "@/assets/intern-revati.jpg.asset.json";
 import { Quote, Orbit } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -120,6 +127,55 @@ const interns = [
     image: internVedAsset.url,
     alt: "Ved Khairnar - Web Developer, Letter of Appreciation",
     name: "Ved Khairnar",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internAayush.url,
+    alt: "Aayush Nalawade - Project Management, Letter of Appreciation",
+    name: "Aayush Nalawade",
+    role: "Project Management",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internNundana.url,
+    alt: "Nundana Sree - Web Developer, Letter of Appreciation",
+    name: "Nundana Sree",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internInshal.url,
+    alt: "Inshal Zafar - Project Developer, Letter of Appreciation",
+    name: "Inshal Zafar",
+    role: "Project Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internSavani.url,
+    alt: "Savani Lohate - Web Developer, Letter of Appreciation",
+    name: "Savani Lohate",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internVedant.url,
+    alt: "Vedant Turkar - Web Developer, Letter of Appreciation",
+    name: "Vedant Turkar",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internSmit.url,
+    alt: "Smit Jambhale - Web Developer, Letter of Appreciation",
+    name: "Smit Jambhale",
+    role: "Web Developer",
+    batch: "Letter of Appreciation, Symbiosis, Pune",
+  },
+  {
+    image: internRevati.url,
+    alt: "Revati Chavan - Web Developer, Letter of Appreciation",
+    name: "Revati Chavan",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
