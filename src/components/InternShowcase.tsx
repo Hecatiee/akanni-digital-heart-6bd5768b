@@ -69,7 +69,7 @@ const interns = [
     batch: "Letter of Appreciation, MIT WPU, Pune",
   },
   {
-    image: internNirmiti,
+    image: internNirmiti.url,
     alt: "Nirmiti Parkar - Designer, Letter of Appreciation",
     name: "Nirmiti Parkar",
     role: "Designer",
