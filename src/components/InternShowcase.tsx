@@ -18,7 +18,8 @@ import internInshal from "@/assets/intern-inshal.jpg.asset.json";
 import internSavani from "@/assets/intern-savani.jpg.asset.json";
 import internVedant from "@/assets/intern-vedant.jpg.asset.json";
 import internSmit from "@/assets/intern-smit.jpg.asset.json";
-import internRevati from "@/assets/intern-revati.jpg.asset.json";
+import internRevati from "@/assets/intern-revati-new.jpg.asset.json";
+import internParth from "@/assets/intern-parth.jpg.asset.json";
 import { Quote, Orbit } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -179,6 +180,13 @@ const interns = [
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
+  {
+    image: internParth.url,
+    alt: "Parth Sujit - Project Developer, Letter of Recommendation",
+    name: "Parth Sujit",
+    role: "Project Developer",
+    batch: "Letter of Recommendation, Symbiosis, Pune",
+  },
 ];
 
 const shuffle = <T,>(items: T[]) => {
@@ -229,8 +237,11 @@ const InternShowcase = () => {
                       src={intern.image}
                       alt={intern.alt}
                       className="w-full max-w-xl h-auto mb-6 object-contain rounded-lg border border-primary/20 shadow-[0_0_40px_-10px_hsl(195_90%_70%/0.4)]"
-                      loading="eager"
+                      loading={index < 2 ? "eager" : "lazy"}
+                      fetchPriority={index === 0 ? "high" : "low"}
                       decoding="async"
+                      width={1000}
+                      height={1250}
                     />
                     <div className="text-center">
                       <h3 className="font-display text-2xl text-foreground italic mb-2">
