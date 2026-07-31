@@ -15,7 +15,7 @@ import { toast } from "sonner";
 import { Upload, ArrowLeft, Mail, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import InternShowcase from "@/components/InternShowcase";
+import CourseShowcase from "@/components/CourseShowcase";
 import { z } from "zod";
 import { Helmet } from "react-helmet-async";
 
@@ -160,6 +160,20 @@ const Courses = () => {
             <div className="hairline w-32 mx-auto" />
           </div>
 
+          <div className="relative mb-12 overflow-hidden border border-primary/30 bg-card/50 backdrop-blur-sm p-6 text-center">
+            <div
+              className="absolute inset-0 -z-10 opacity-30 pointer-events-none"
+              style={{ background: "var(--gradient-glow)", filter: "blur(60px)" }}
+            />
+            <p className="eyebrow mb-2">Note</p>
+            <p className="text-sm text-foreground/90 leading-relaxed max-w-xl mx-auto">
+              The courses we run are customised around each learner's interest, and they are chargeable. When you
+              enrol yourself for a paid programme you tend to put in more effort towards completing it. The charge
+              for the course is{" "}
+              <span className="text-primary text-glow font-semibold">₹1999 INR</span>.
+            </p>
+          </div>
+
           {/* Contact Info Section */}
           <div className="mb-12 bg-card/40 backdrop-blur-sm p-6 border border-border/60">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
@@ -272,7 +286,7 @@ const Courses = () => {
           </form>
 
           <div className="mt-16">
-            <InternShowcase />
+            <CourseShowcase />
           </div>
         </div>
       </div>
