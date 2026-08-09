@@ -3,23 +3,23 @@ import internAtharva from "@/assets/intern-atharva.png";
 import internTrupti from "@/assets/intern-trupti.png";
 import internRiddhi from "@/assets/intern-riddhi.png";
 import internMrunali from "@/assets/intern-mrunali.png";
-import internNirmiti from "@/assets/intern-nirmiti-new.png.asset.json";
+import internNirmiti from "@/assets/intern-nirmiti-new.jpg";
 import internAditya from "@/assets/intern-aditya.jpeg";
 import internRishi from "@/assets/intern-rishi.jpeg";
 import internPushkar from "@/assets/intern-pushkar.jpeg";
 import internAditi from "@/assets/intern-aditi.jpeg";
 import internOmkar from "@/assets/intern-omkar.jpeg";
-import internShubhanAsset from "@/assets/intern-shubhan.png.asset.json";
-import internAdityaShindeAsset from "@/assets/intern-aditya-shinde.png.asset.json";
-import internVedAsset from "@/assets/intern-ved.png.asset.json";
-import internAayush from "@/assets/intern-aayush.jpg.asset.json";
-import internNundana from "@/assets/intern-nundana.jpg.asset.json";
-import internInshal from "@/assets/intern-inshal.jpg.asset.json";
-import internSavani from "@/assets/intern-savani.jpg.asset.json";
-import internVedant from "@/assets/intern-vedant.jpg.asset.json";
-import internSmit from "@/assets/intern-smit.jpg.asset.json";
-import internRevati from "@/assets/intern-revati-new.jpg.asset.json";
-import internParth from "@/assets/intern-parth.jpg.asset.json";
+import internShubhanAsset from "@/assets/intern-shubhan.jpg";
+import internAdityaShindeAsset from "@/assets/intern-aditya-shinde.jpg";
+import internVedAsset from "@/assets/intern-ved.jpg";
+import internAayush from "@/assets/intern-aayush.jpg";
+import internNundana from "@/assets/intern-nundana.jpg";
+import internInshal from "@/assets/intern-inshal.jpg";
+import internSavani from "@/assets/intern-savani.jpg";
+import internVedant from "@/assets/intern-vedant.jpg";
+import internSmit from "@/assets/intern-smit.jpg";
+import internRevati from "@/assets/intern-revati-new.jpg";
+import internParth from "@/assets/intern-parth.jpg";
 import { Quote, Orbit } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -69,7 +69,7 @@ const interns = [
     batch: "Letter of Appreciation, MIT WPU, Pune",
   },
   {
-    image: internNirmiti.url,
+    image: internNirmiti,
     alt: "Nirmiti Parkar - Designer, Letter of Appreciation",
     name: "Nirmiti Parkar",
     role: "Designer",
@@ -111,77 +111,77 @@ const interns = [
     batch: "Letter of Appreciation, MIT WPU, Pune",
   },
   {
-    image: internShubhanAsset.url,
+    image: internShubhanAsset,
     alt: "Shubhan Khairnar - Web Developer, Letter of Appreciation",
     name: "Shubhan Khairnar",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internAdityaShindeAsset.url,
+    image: internAdityaShindeAsset,
     alt: "Aditya Shinde - Web Developer, Letter of Recommendation",
     name: "Aditya Shinde",
     role: "Web Developer",
     batch: "Letter of Recommendation, Symbiosis, Pune",
   },
   {
-    image: internVedAsset.url,
+    image: internVedAsset,
     alt: "Ved Khairnar - Web Developer, Letter of Appreciation",
     name: "Ved Khairnar",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internAayush.url,
+    image: internAayush,
     alt: "Aayush Nalawade - Project Management, Letter of Appreciation",
     name: "Aayush Nalawade",
     role: "Project Management",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internNundana.url,
+    image: internNundana,
     alt: "Nundana Sree - Web Developer, Letter of Appreciation",
     name: "Nundana Sree",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internInshal.url,
+    image: internInshal,
     alt: "Inshal Zafar - Project Developer, Letter of Appreciation",
     name: "Inshal Zafar",
     role: "Project Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internSavani.url,
+    image: internSavani,
     alt: "Savani Lohate - Web Developer, Letter of Appreciation",
     name: "Savani Lohate",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internVedant.url,
+    image: internVedant,
     alt: "Vedant Turkar - Web Developer, Letter of Appreciation",
     name: "Vedant Turkar",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internSmit.url,
+    image: internSmit,
     alt: "Smit Jambhale - Web Developer, Letter of Appreciation",
     name: "Smit Jambhale",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internRevati.url,
+    image: internRevati,
     alt: "Revati Chavan - Web Developer, Letter of Appreciation",
     name: "Revati Chavan",
     role: "Web Developer",
     batch: "Letter of Appreciation, Symbiosis, Pune",
   },
   {
-    image: internParth.url,
+    image: internParth,
     alt: "Parth Sujit - Project Developer, Letter of Recommendation",
     name: "Parth Sujit",
     role: "Project Developer",

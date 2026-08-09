@@ -1,6 +1,6 @@
-import courseHarish from "@/assets/course-harish.jpg.asset.json";
-import courseTanaya from "@/assets/course-tanaya.jpg.asset.json";
-import courseMasud from "@/assets/course-masud.jpg.asset.json";
+import courseHarish from "@/assets/course-harish.jpg";
+import courseTanaya from "@/assets/course-tanaya.jpg";
+import courseMasud from "@/assets/course-masud.jpg";
 import { Quote, Orbit } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -15,21 +15,21 @@ import SpaceDecor from "@/components/SpaceDecor";
 
 const learners = [
   {
-    image: courseHarish.url,
+    image: courseHarish,
     alt: "Harish Badgujar - Web Developer, Course Completion",
     name: "Harish Badgujar",
     role: "Web Developer",
     batch: "Course Completion, Sandip University, Nashik",
   },
   {
-    image: courseTanaya.url,
+    image: courseTanaya,
     alt: "Tanaya Joshi - Web Developer, Course Completion",
     name: "Tanaya Joshi",
     role: "Web Developer",
     batch: "Course Completion, MIT WPU, Pune",
   },
   {
-    image: courseMasud.url,
+    image: courseMasud,
     alt: "Masud Abbasi - Social Media, Course Completion",
     name: "Masud Abbasi",
     role: "Social Media",

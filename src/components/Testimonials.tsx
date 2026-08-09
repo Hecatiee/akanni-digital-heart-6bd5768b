@@ -5,8 +5,12 @@ import comicBeeTestimonial from "@/assets/testimonial-comicbee.jpeg";
 import kawaltheTestimonial from "@/assets/testimonial-kawalthe.jpeg";
 import dreamsvinTestimonial from "@/assets/testimonial-dreamsvin.jpeg";
 import kathaSudhaTestimonial from "@/assets/testimonial-kathasudha.jpeg";
-import rajniTestimonial from "@/assets/testimonial-rajni.jpeg";
 import avoraTestimonial from "@/assets/testimonial-avora.jpeg";
+import rajniAsset from "@/assets/testimonial-rajni-new.jpg";
+import koshaAsset from "@/assets/testimonial-kosha.jpg";
+import bodhiAsset from "@/assets/testimonial-bodhi.jpg";
+import vittaeduAsset from "@/assets/testimonial-vittaedu.jpg";
+import sharwariAsset from "@/assets/testimonial-sharwari.jpg";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Reveal from "@/components/Reveal";
@@ -66,12 +70,40 @@ const Testimonials = () => {
       link: "https://www.instagram.com/avora_experiences?igsh=MXZ4YXF1Y2J4MmNpOQ=="
     },
     {
-      image: rajniTestimonial,
+      image: rajniAsset,
       alt: "Rajni Raut - Social Media Management & Editing Testimonial",
       title: "Rajni Raut",
       description: "Social Media Management & Editing",
       link: "https://www.instagram.com/rajniraut230?igsh=angxYnljODZldGVp"
-    }
+    },
+    {
+      image: koshaAsset,
+      alt: "Kosha Mehta - Connecting Chalks Testimonial",
+      title: "Kosha Mehta",
+      description: "Connecting Chalks",
+      link: "https://www.instagram.com/connectingchalks"
+    },
+    {
+      image: bodhiAsset,
+      alt: "Tr. Narayan Sarody - Bodhi Agri Tourism Testimonial",
+      title: "Tr. Narayan Sarody",
+      description: "Bodhi Agri Tourism",
+      link: "https://www.instagram.com/_bodhi.agritourism_"
+    },
+    {
+      image: vittaeduAsset,
+      alt: "Payal Bole - Vittaedu NGO Testimonial",
+      title: "Payal Bole",
+      description: "Vittaedu (NGO)",
+      link: "https://www.instagram.com/vittaeduhq"
+    },
+    {
+      image: sharwariAsset,
+      alt: "Ishaan Ji - Sharwari Agro Farms Testimonial",
+      title: "Ishaan Ji",
+      description: "Sharwari Agro Farms",
+      link: "https://www.instagram.com/sharwari_agro_farm"
+    },
   ];
   const testimonials = useMemo(() => shuffle(allTestimonials), []);
 
