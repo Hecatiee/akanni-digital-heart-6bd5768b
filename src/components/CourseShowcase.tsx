@@ -1,6 +1,8 @@
 import courseHarish from "@/assets/course-harish.jpg";
 import courseTanaya from "@/assets/course-tanaya.jpg";
 import courseMasud from "@/assets/course-masud.jpg";
+import courseSidhu from "@/assets/course-sidhu.jpg";
+import courseShivanandhu from "@/assets/course-shivanandhu.jpg";
 import { Quote, Orbit } from "lucide-react";
 import { useMemo } from "react";
 import {
@@ -32,6 +34,20 @@ const learners = [
     image: courseMasud,
     alt: "Masud Abbasi - Social Media, Course Completion",
     name: "Masud Abbasi",
+    role: "Social Media",
+    batch: "Course Completion, Central University, Tamil Nadu",
+  },
+  {
+    image: courseSidhu,
+    alt: "Eerugula Sidhu - Social Media, Course Completion",
+    name: "Eerugula Sidhu",
+    role: "Social Media",
+    batch: "Course Completion, Central University, Tamil Nadu",
+  },
+  {
+    image: courseShivanandhu,
+    alt: "Kondoju Shivanandhu - Social Media, Course Completion",
+    name: "Kondoju Shivanandhu",
     role: "Social Media",
     batch: "Course Completion, Central University, Tamil Nadu",
   },
