@@ -133,7 +133,7 @@ const Contact = () => {
             </Reveal>
 
             <Reveal y={50} delay={0.15}>
-            <form onSubmit={handleSubmit} className="bg-card/40 backdrop-blur-sm p-8 border border-border/60">
+            <form onSubmit={handleSubmit} className="bg-card/70 backdrop-blur-sm p-8 border border-border/60">
               <div className="space-y-4">
                 <div>
                   <Input
@@ -142,7 +142,7 @@ const Contact = () => {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="rounded-none border-0 border-b border-border bg-transparent focus-visible:ring-0 focus:border-primary px-0"
+                    className="rounded-none border border-border/60 bg-background/60 text-foreground placeholder:text-muted-foreground/70 focus-visible:ring-0 focus:border-primary px-4 h-12"
                     aria-label="Your name"
                   />
                   {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
@@ -155,7 +155,7 @@ const Contact = () => {
                     placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={handleChange}
-                    className="rounded-none border-0 border-b border-border bg-transparent focus-visible:ring-0 focus:border-primary px-0"
+                    className="rounded-none border border-border/60 bg-background/60 text-foreground placeholder:text-muted-foreground/70 focus-visible:ring-0 focus:border-primary px-4 h-12"
                     aria-label="Your email"
                   />
                   {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
@@ -168,7 +168,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="rounded-none border border-border bg-transparent focus-visible:ring-0 focus:border-primary resize-none"
+                    className="rounded-none border border-border/60 bg-background/60 text-foreground placeholder:text-muted-foreground/70 focus-visible:ring-0 focus:border-primary resize-none px-4 py-3"
                     aria-label="Your message"
                   />
                   {errors.message && <p className="text-destructive text-sm mt-1">{errors.message}</p>}

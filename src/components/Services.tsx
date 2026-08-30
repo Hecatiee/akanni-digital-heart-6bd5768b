@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   Share2, Monitor, BarChart3, Calendar, Smartphone,
-  Palette, Users, Package, Settings, Search, ArrowRight, Plus, Minus,
+  Palette, Users, Package, Settings, Search, ArrowRight, Plus, Minus, Clapperboard,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import { motion, AnimatePresence } from "framer-motion";
@@ -139,6 +139,19 @@ const services = [
       "Hashtag and caption SEO for socials",
       "Analytics-based improvement strategy",
       "Monthly SEO performance tracking"
+    ]
+  },
+  {
+    title: "Video Edits",
+    icon: Clapperboard,
+    color: "text-accent",
+    bgColor: "bg-accent/10",
+    description: "We craft scroll-stopping video edits that carry your brand's story.",
+    points: [
+      "Reels, shorts & long-form video editing",
+      "Motion graphics, transitions & captions",
+      "Color grading & sound design",
+      "Platform-ready exports for every social"
     ]
   },
 ];
