@@ -47,7 +47,7 @@ const projects = [
   },
   {
     title: "Comic Bee",
-    hook: "Not just learning. Smarter learning.",
+    hook: "Not just learning, targetting NCERT and national board of INDIA.",
     description: "Upgrading education across SSC, CBSE, and ICSE through structured, modern learning approaches.",
     icon: BookOpen,
     color: "text-primary",

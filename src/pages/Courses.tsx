@@ -54,6 +54,7 @@ const Courses = () => {
     "Business Development",
     "Event Management",
     "Model Training",
+    "Video Editing",
   ];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
